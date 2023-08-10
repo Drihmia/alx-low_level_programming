@@ -1,14 +1,14 @@
 #include <stdio.h>
 
 /**
- * printing \"Programming is like building a multilingual puzzle
- * using the function puts
- * the function  main is an integer
+ * main - is an integer value
+ *Return: 0
  */
 int main(void)
 {
-	/*puts printing*/
+	/**
+	 * puts - printing string sequence en chars
+	 */
 	puts("\"Programming is like building a multilingual puzzle");
-	/*the return value always 0*/
 	return (0);
 }
