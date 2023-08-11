@@ -15,6 +15,6 @@ int main(void)
 	/**
 	 * write - write the message directly to stderr
 	 */
-	write(STDERR_FILENO, message, sizeof(message) -1);
+	write(STDERR_FILENO, message, sizeof(message) - 1);
 	return (1);
 }
