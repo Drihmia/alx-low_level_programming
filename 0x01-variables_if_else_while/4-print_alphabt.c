@@ -10,8 +10,9 @@ int main(void)
 
 	for (i = 97; i <= 122; i++)
 	{
-		if (i != 113 | i != 101)
-			putchar(i);
+		if (i != 113 )
+			if (i != 101)
+				putchar(i);
 	}
 	putchar(10);
 	return (0);
