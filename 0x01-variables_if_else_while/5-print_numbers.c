@@ -12,7 +12,7 @@ int main(void)
 	/* for - looping from 0 to 9 */
 	for (i = 0; i <= 9; i++)
 	{
-		printf("%d",i);
+		printf("%d", i);
 	}
 	putchar(10);
 
