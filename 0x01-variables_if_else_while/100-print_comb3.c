@@ -9,15 +9,16 @@ int main(void)
 {
 	/* @m: character and newline*/
 	int i;
+	int j;
 
 
 	for (i = 48; i <= 57; i++)
 	{
-		putchar(i);
-		for (i = 48; i <= 57; i++)
+		for (j = i + 1; j <= 57; j++)
 		{
 			putchar(i);
-			if (i != 57)
+			putchar(j);
+			if (i != 56)
 			{
 				putchar(44);
 				putchar(32);
