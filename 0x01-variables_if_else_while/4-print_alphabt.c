@@ -4,10 +4,12 @@
  * main - integer
  * Return: 0
  */
+
 int main(void)
 {
 	int i;
 
+	/* for - looping fron equvalents of a to z iin ASCII */
 	for (i = 97; i <= 122; i++)
 	{
 		if (i != 113 )
@@ -15,5 +17,6 @@ int main(void)
 				putchar(i);
 	}
 	putchar(10);
+
 	return (0);
 }
