@@ -22,18 +22,15 @@ int main(void)
 			{
 				for (l = 48; l <= 57; l++)
 				{
-					if ((i != k && i < k) && (j != l && j < l))
+					putchar(i);
+					putchar(j);
+					putchar(32);
+					putchar(k);
+					putchar(l);
+					if (j != 56)
 					{
-						putchar(i);
-						putchar(j);
+						putchar(44);
 						putchar(32);
-						putchar(k);
-						putchar(l);
-						if ((j != 56) && (k != 57) && (i != 57) && (l != 57))
-						{
-							putchar(44);
-							putchar(32);
-						}
 					}
 				}
 			}
