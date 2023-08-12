@@ -4,39 +4,30 @@
  * main - integer
  * Return: 0
  */
-
 int main(void)
 {
-	/* @m: character and newline*/
 	int i;
 	int j;
-	int k;
-	int l;
 
-
-	for (i = 48; i <= 57; i++)
+	for (i = 0; i <= 99; i++)
 	{
-		for (j = 48; j <= 57; j++)
+		for (j = 0; j <= 99; j++)
 		{
-			for (k = 48; k <= 57; k++)
+			if (j > i)
 			{
-				for (l = 48; l <= 57; l++)
+				putchar((i / 10) + '0');
+				putchar((i % 10) + '0');
+				putchar(' ');
+				putchar((j / 10) + '0');
+				putchar((j % 10) + '0');
+				if (i != 98)
 				{
-					putchar(i);
-					putchar(j);
-					putchar(32);
-					putchar(k);
-					putchar(l);
-					if (j != 56)
-					{
-						putchar(44);
-						putchar(32);
-					}
+					putchar(',');
+					putchar(' ');
 				}
 			}
 		}
 	}
-	putchar(10);
-
+	putchar('\n');
 	return (0);
 }
