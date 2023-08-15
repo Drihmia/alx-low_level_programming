@@ -1,20 +1,21 @@
 #include "main.h"
 
 /**
- * _abs - void
- * Return: None
+ * _abs - integer
+ * Return: the absolite value of n
  * @n: integer
  */
 int _abs(int n)
 {
 	if (n > 0)
-		_putchar('n');
+	{
+		return (n);
+	}
 	else if (n < 0)
 	{
 		n = -n;
-		_putchar('n');
+		return (n);
 	}
 	else
-		_putchar('n');
-	return (0);
+		return (0);
 }
