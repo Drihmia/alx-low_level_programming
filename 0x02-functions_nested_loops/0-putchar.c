@@ -1,5 +1,7 @@
 #include "main.h"
 
+int _putchar(char c);
+
 /**
  * main - integer
  * Return: 0
