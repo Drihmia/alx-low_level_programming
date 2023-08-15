@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Prompt the user for the script name
-read -p "Enter the script name: " script_name
+read -p "Enter the file's name: " script_name
 
 # Check if the script name is empty
 if [ -z "$script_name" ]; then
@@ -10,17 +10,21 @@ if [ -z "$script_name" ]; then
 fi
 
 # Create the script file with the given script_name
-echo "#!/bin/bash" > "$script_name"
+echo "#include <stdio.h>" > "$script_name"
 
-# Prompt the user for the second line of the script
-read -p "Enter the second line of the script: " second_line
+#adding 2 empty lines
+echo "" >> "$script_name"
+echo "/**" >> "$script_name"
+echo " * main - integer" >> "$script_name"
+echo " * Return: 0" >> "$script_name"
+echo " */" >> "$script_name"
+echo "int main(void)" >> "$script_name"
+echo "{" >> "$script_name"
+echo "" >> "$script_name"
+echo -e "\treturn (0);" >> "$script_name"
+echo "}" >> "$script_name"
 
-# Add the second line to the script file
-echo "$second_line" >> "$script_name"
-
-# Make the specified script executable for the owner
-chmod +x "$script_name"
-
+vi  "$script_name"
 # Prompt the user for the commit message
 read -p "Enter the commit message: " commit_message
 
