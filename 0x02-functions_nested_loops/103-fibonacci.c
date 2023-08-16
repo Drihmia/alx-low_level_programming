@@ -14,11 +14,11 @@ int main(void)
 
 	while (b <= 4000000)
 	{
-		if (a % 2 != 0)
+		if (a % 2 == 0)
 		{
 			sum += a;
 		}
-		if (b % 2 != 0)
+		if (b % 2 == 0)
 		{
 			sum += b;
 		}
