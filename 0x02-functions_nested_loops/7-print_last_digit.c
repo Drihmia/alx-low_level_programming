@@ -8,19 +8,12 @@
 int print_last_digit(int n)
 {
 	if (n > 0)
-	{
-	}
+		return (n % 10);
 	else if (n < 0)
 	{
 		n = -n;
+		return (n % 10);
 	}
 	else
-	{
 		return (0);
-	}
-	while ((n >= 0 && n <= 9))
-	{
-		n %= 10;
-	}
-	return (n);
 }
