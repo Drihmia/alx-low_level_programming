@@ -29,9 +29,9 @@ void print_digits(int a)
 		if (a >= -9)
 		{
 			_putchar('-');
-			_putchar(-(a) + '0');
+			_putchar(-(a % 10) + '0');
 		}
-		if (a <= -10 && a >= -99)
+		else if (a <= -10 && a >= -99)
 		{
 			_putchar('-');
 			_putchar(-(a / 10) + '0');
@@ -39,6 +39,7 @@ void print_digits(int a)
 		}
 		else
 		{
+			_putchar('-');
 			_putchar(-(a / 100) + '0');
 			_putchar(-((a / 10) % 10) + '0');
 			_putchar(-(a % 10) + '0');
