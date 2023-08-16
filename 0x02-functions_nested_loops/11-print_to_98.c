@@ -1,4 +1,5 @@
 #include "main.h"
+void print_digits(int a);
 
 /**
  * print_digits - print up to 3 digits of a negative or positive numbers
