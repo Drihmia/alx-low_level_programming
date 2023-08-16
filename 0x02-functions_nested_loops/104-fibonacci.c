@@ -6,25 +6,21 @@
  */
 int main(void)
 {
-	long int i, a, b;
+	int i;
+	unsigned long long int a, b;
 
 	i = 2;
 	a = 1;
 	b = 2;
 
-	while (i <= 48)
+	while (i <= 98)
 	{
-		printf("%ld", a);
-		printf(", ");
-		printf("%ld", b);
-		if (b != 20365011074)
-		{
-			printf(", ");
-		}
+		printf("%llu, ", a);
+		printf("%llu, ", b);
 		a = a + b;
 		b = a + b;
 		i += 2;
 	}
-	printf("\n");
+	printf("...\n");
 	return (0);
 }
