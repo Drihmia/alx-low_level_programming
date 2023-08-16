@@ -24,7 +24,7 @@ void print_digits(int a)
 			_putchar(a % 10 + '0');
 		}
 	}
-	else	
+	else
 	{
 		if (a >= -9)
 		{
@@ -64,8 +64,10 @@ void print_to_98(int n)
 			else
 				print_digits(i);
 			if (i != 98)
+			{
 				_putchar(',');
 				_putchar(' ');
+			}
 		}
 	}
 	else
