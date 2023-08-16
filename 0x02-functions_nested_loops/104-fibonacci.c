@@ -7,7 +7,7 @@
 int main(void)
 {
 	int i;
-	unsigned long long int a, b;
+	unsigned long int a, b;
 
 	i = 2;
 	a = 1;
@@ -15,8 +15,8 @@ int main(void)
 
 	while (i <= 98)
 	{
-		printf("%llu, ", a);
-		printf("%llu, ", b);
+		printf("%lu, ", a);
+		printf("%lu, ", b);
 		a = a + b;
 		b = a + b;
 		i += 2;
