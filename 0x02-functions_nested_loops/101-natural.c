@@ -2,7 +2,6 @@
 
 /**
  * main - integer
- * @sum: sum of öultiple of 3 and 5
  * Return: 0
  */
 int main(void)
