@@ -21,6 +21,6 @@ int main(void)
 		b = a + b;
 		i += 2;
 	}
-	printf("...\n");
+	printf("\n");
 	return (0);
 }
