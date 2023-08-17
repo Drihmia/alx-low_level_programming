@@ -1,11 +1,12 @@
 #include "main.h"
 
 /**
- * mul - checks if a letter is upper.
- * Return: 1 if successfully.
- * @c: integer.
+ * mul - mulatiplication of two digits
+ * @a: first integer.
+ * @b: 2nd integer.
+ * Return: return the results of a times b 
  */
 int mul(int a, int b)
 {
-	return (a + b);
+	return (a * b);
 }
