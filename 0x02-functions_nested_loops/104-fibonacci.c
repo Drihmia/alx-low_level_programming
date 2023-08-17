@@ -17,8 +17,8 @@ int main(void)
 	{
 		printf("%lu, ", a);
 		printf("%lu, ", b);
-		a = (unsigned long long)a + (unsigned long long)b;
-		b = (unsigned long long)a + (unsigned long long)b;
+		a = a + b;
+		b = a + b;
 		i += 2;
 	}
 	printf("...\n");
