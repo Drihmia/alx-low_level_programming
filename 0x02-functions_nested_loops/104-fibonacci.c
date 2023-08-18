@@ -43,7 +43,7 @@ int main(void)
  */
 void if_local(int it, long int a, long int b)
 {
-	long int tempo_1, tempo_2, a_1, a_2, b_1, b_2, b_2_1, b_2_2;
+	int tempo_1, tempo_2, a_1, a_2, b_1, b_2, b_2_1, b_2_2;
 
 	if (it == 92)
 	{
