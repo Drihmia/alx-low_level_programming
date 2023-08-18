@@ -42,8 +42,6 @@ void print_digits(int a)
 		print_4(a);
 	else if ((a > 9999 && a < 100000) || (a < -9999 && a > -100000))
 		print_5(a);
-	else
-		print_m(a);
 }
 
 /**
