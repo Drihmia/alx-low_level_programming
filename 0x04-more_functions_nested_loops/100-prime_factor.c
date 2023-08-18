@@ -13,10 +13,8 @@ int main(void)
 {
 
 	long int num;
-	num = 50829599;
-	printf("start of finding prime numbers . . . \n");
+	num = 612852475143;
 	prime_nums_of(num, 0);
-	printf("finish of finding prime numbers . . . \n");
 	return (0);
 }
 
@@ -53,10 +51,8 @@ int prime_nums_of(long int n, int ch)
 	for (i = 1; i <= n; i++)
 	{
 		l = 0;
-		//printf("                            %d \n", i);
 		for (j = 1; j <= sqrt(i); j++)
 		{
-			//printf("%d ****                             \n", j);
 			/* check how many time i is divisible by j */
 			if (i % j == 0)
 				l = l + 1;
@@ -67,7 +63,6 @@ int prime_nums_of(long int n, int ch)
 			if (i > 1)
 			{
 				_isdivisible(n, i);
-				//printf("The prime factor of 1231952 are : %d \n", n);
 			}
 			if (ch == 1)
 				printf("%ld is prime numbers \n",i);
