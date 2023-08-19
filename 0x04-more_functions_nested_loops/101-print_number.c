@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "main.h"
 
 int _pow(int m, int n);
