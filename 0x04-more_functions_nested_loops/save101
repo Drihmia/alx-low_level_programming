@@ -108,37 +108,37 @@ void print_1(int n)
 }
 
 
-	/*if ((a >= 0 && a <= 999))
-	  {
-	  else if (a > 99 && a <= 999)
-	  {
-	  _putchar(a / 100 + '0');
-	  _putchar((a / 10) % 10 + '0');
-	  _putchar(a % 10 + '0');
-	  }
-	  else if (a > 999 && a <= 9999)
-	  {
-	  _putchar(a / 1000 + '0');
-	  _putchar((a / 100) % 10 + '0');
-	  _putchar((a / 10) % 10 + '0');
-	  _putchar(a % 10 + '0');
-	  }
-	  }
-	  else
-	  {
-	  }
-	  else if (a < -99 && a >= -999)
-	  {
-	  _putchar('-');
-	  _putchar(-(a / 100) + '0');
-	  _putchar(-((a / 10) % 10) + '0');
-	  _putchar(-(a % 10) + '0');
-	  }
-	  else if (a < -999 && a >= -9999)
-	  {
-	  _putchar(-(a / 1000) + '0');
-	  _putchar(-(a / 100) % 10 + '0');
-	  _putchar(-(a / 10) % 10 + '0');
-	  _putchar(-a % 10 + '0');
-	  }
-	  }*/
+/*if ((a >= 0 && a <= 999))
+  {
+  else if (a > 99 && a <= 999)
+  {
+  _putchar(a / 100 + '0');
+  _putchar((a / 10) % 10 + '0');
+  _putchar(a % 10 + '0');
+  }
+  else if (a > 999 && a <= 9999)
+  {
+  _putchar(a / 1000 + '0');
+  _putchar((a / 100) % 10 + '0');
+  _putchar((a / 10) % 10 + '0');
+  _putchar(a % 10 + '0');
+  }
+  }
+  else
+  {
+  }
+  else if (a < -99 && a >= -999)
+  {
+  _putchar('-');
+  _putchar(-(a / 100) + '0');
+  _putchar(-((a / 10) % 10) + '0');
+  _putchar(-(a % 10) + '0');
+  }
+  else if (a < -999 && a >= -9999)
+  {
+  _putchar(-(a / 1000) + '0');
+  _putchar(-(a / 100) % 10 + '0');
+  _putchar(-(a / 10) % 10 + '0');
+  _putchar(-a % 10 + '0');
+  }
+  }
