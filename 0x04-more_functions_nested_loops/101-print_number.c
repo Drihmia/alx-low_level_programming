@@ -4,7 +4,6 @@ int _pow(int m, int n);
 int _len(int n);
 void print_m(int n);
 void print_1(int n);
-void print_number(int n);
 
 
 /**
