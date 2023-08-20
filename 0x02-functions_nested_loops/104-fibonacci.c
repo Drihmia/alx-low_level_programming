@@ -28,17 +28,17 @@ int main(void)
 		}
 		else if (it == 92)
 		{
-			print_92(a, b, '');
+			print_92(a, b, 7);
 		}
 		else if (it > 92)
 		{
-			else if (it == 93)
+			if (it == 93)
 			{
 				m = print_92(a, b, 1);
 				n = print_92(a, b, 2);
 				l = print_92(a, b, 3);
 				p = print_92(a, b, 4);
-				print_93(m, n, l, p, '');
+				print_93(m, n, l, p, 7);
 			}
 			else
 			{
@@ -46,7 +46,7 @@ int main(void)
 				n = print_93(m, n, l, p, 2);
 				l = print_93(m, n, l, p, 3);
 				p = print_93(m, n, l, p, 4);
-				print_94_up_98(m, n, l, p, '');
+				print_94_up_98(m, n, l, p);
 			}
 		}
 		printf("\n");
@@ -67,6 +67,8 @@ int main(void)
 
 void print_94_up_98(int a_1, int a_2, int b_1, int b_2)
 {
+	int tempo_1, tempo_2, b_2_1, b_2_2;
+
 	tempo_1 = a_1;
 	tempo_2 = a_2;
 	a_1 = b_1;
