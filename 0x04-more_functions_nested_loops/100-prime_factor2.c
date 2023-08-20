@@ -2,7 +2,7 @@
 #include <math.h>
 
 int prime_nums_of(unsigned long int n, int ch);
-unsigned long int _isdivisible(unsigned long int x, unsigned long int y);
+void _isdivisible(unsigned long int x, unsigned long int y);
 
 
 /**
@@ -11,9 +11,9 @@ unsigned long int _isdivisible(unsigned long int x, unsigned long int y);
  */
 int main(void)
 {
-	unsigned long int num;
 
-	num = 612852475143;
+	unsigned long int num;
+	num = 12319529;
 	prime_nums_of(num, 0);
 	return (0);
 }
@@ -26,15 +26,14 @@ int main(void)
  * Return: value of z:
  */
 
-unsigned long int _isdivisible(unsigned long int x, unsigned long int y)
+void _isdivisible(unsigned long int x, unsigned long int y)
 {
 	while (x % y == 0)
 	{
-		/*printf("one of prime factors of %14lu\t",x);*/
-		printf("    is : %7lu \n", y);
+		printf("The prime factor of %lu\n",x);
 		x = x / y;
+		printf("are : %lu \n", y);
 	}
-	return (x);
 }
 
 /**
@@ -53,27 +52,21 @@ int prime_nums_of(unsigned long int n, int ch)
 	for (i = 2; i <= n; i++)
 	{
 		l = 0;
-		/* check how many time n is divisible by i */
-		if (n % i == 0)
+		for (j = 1; j <= sqrt(i); j++)
 		{
-			j = i;
-			while (j > 0)
-			{
-				if (i % j == 0)
+			/* check how many time i is divisible by j */
+			if (i % j == 0)
 				l += 1;
-				j--;
-			}
 		}
-		/* l == 2 means i is divisible only by 1 and itself */
-		if (l == 2)
+		/* l == 1 means i is divisible only by 1 and itself */
+		if (l == 1)
 		{
-
+			if (i > 1)
+			{
+				_isdivisible(n, i);
+			}
 			if (ch == 1)
-				printf("%lu is prime numbers \n", i);
-			n = _isdivisible(n, i);
-			if (n >= 1)
-				break;
-			i = 1;
+				printf("%lu is prime numbers \n",i);
 		}
 	}
 	return (0);

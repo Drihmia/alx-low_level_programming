@@ -13,8 +13,8 @@ int main(void)
 {
 
 	unsigned long int num;
-	num = 1231952;
-	prime_nums_of(num, 1);
+	num = 612852475143;
+	prime_nums_of(num, 0);
 	return (0);
 }
 
@@ -57,13 +57,12 @@ int prime_nums_of(unsigned long int n, int ch)
 		if (n % i == 0)
 		{
 			j = i;
-			while (i % j == 0)
+			while (j > 0)
 			{
-				j--;
-				l += 1;
 			//printf("test before the break\n");
-				if (j < 0)
-					break;
+				if (i % j == 0)
+				l += 1;
+				j--;
 			}
 			//printf("test after the break\n");
 		}
