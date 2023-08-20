@@ -2,7 +2,7 @@
 #include <math.h>
 
 int prime_nums_of(unsigned long int n, int ch);
-unsigned long int _isdivisible(unsigned long int x, unsigned long int y, int a);
+unsigned long int _isdiv(unsigned long int x, unsigned long int y, int a);
 
 
 /**
@@ -19,14 +19,14 @@ int main(void)
 }
 
 /**
- * _isdivisible - check if x is divisibile by y and how many times.
+ * _isdiv - check if x is divisibile by y and how many times.
  * @x: dividend.
  * @y: divisor.
  * @a: integer
  * Return: value of x if a = 1 and y if a = 2.
  */
 
-unsigned long int _isdivisible(unsigned long int x, unsigned long int y, int a)
+unsigned long int _isdiv(unsigned long int x, unsigned long int y, int a)
 {
 	while (x % y == 0)
 	{
@@ -72,9 +72,9 @@ int prime_nums_of(unsigned long int n, int ch)
 
 			if (ch == 1)
 				printf("%lu is prime numbers \n", i);
-			if (_isdivisible(n, i, 2) == 50829599)
-				printf("%lu\n", _isdivisible(n, i, 2));
-			n = _isdivisible(n, i, 1);
+			if (_isdiv(n, i, 2) == 50829599)
+				printf("%lu\n", _isdiv(n, i, 2));
+			n = _isdiv(n, i, 1);
 			i = 1;
 		}
 	}
