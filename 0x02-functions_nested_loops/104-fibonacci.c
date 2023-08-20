@@ -49,9 +49,9 @@ int main(void)
 				print_94_up_98(m, n, l, p);
 			}
 		}
-		printf("\n");
-		return (0);
 	}
+	printf("\n");
+	return (0);
 }
 
 
