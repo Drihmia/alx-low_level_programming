@@ -1,6 +1,7 @@
 #include <stdio.h>
-int print_93(int a_1, int a_2, int b_1, int b_2, int c);
 int print_92(int a, int b, int c);
+int print_93(int a_1, int a_2, int b_1, int b_2, int c);
+void print_94_up_98(int a_1, int a_2, int b_1, int b_2);
 
 /**
  * main - integer
@@ -8,7 +9,7 @@ int print_92(int a, int b, int c);
  */
 int main(void)
 {
-	int a, b, tempo, it;
+	int a, b, tempo, it, m, n, l, p;
 
 	a = 1;
 	b = 2;
@@ -27,17 +28,25 @@ int main(void)
 		}
 		else if (it == 92)
 		{
-			print_92(a, b, );
+			print_92(a, b, '');
 		}
 		else if (it > 92)
 		{
 			else if (it == 93)
 			{
-				print_93(print_92(a, b, 1), print_92(a, b, 2), print_92(a, b, 3), print_92(a, b, 4), );
+				m = print_92(a, b, 1);
+				n = print_92(a, b, 2);
+				l = print_92(a, b, 3);
+				p = print_92(a, b, 4);
+				print_93(m, n, l, p, '');
 			}
 			else
 			{
-				print_94_up_98();
+				m = print_93(m, n, l, p, 1);
+				n = print_93(m, n, l, p, 2);
+				l = print_93(m, n, l, p, 3);
+				p = print_93(m, n, l, p, 4);
+				print_94_up_98(m, n, l, p, '');
 			}
 		}
 		printf("\n");
@@ -53,7 +62,7 @@ int main(void)
  * @a_2: 2nd number is an integer.
  * @b_1: 1st number is integer.
  * @b_2: 2nd number is an integer.
- * Return: None. 
+ * Return: None.
  */
 
 void print_94_up_98(int a_1, int a_2, int b_1, int b_2)
@@ -83,7 +92,7 @@ void print_94_up_98(int a_1, int a_2, int b_1, int b_2)
 
 int print_93(int a_1, int a_2, int b_1, int b_2, int c)
 {
-	int tempo_1, tempo_2; 
+	int tempo_1, tempo_2;
 
 	tempo_1 = a_1;
 	tempo_2 = a_2;
@@ -134,7 +143,5 @@ int print_92(int a, int b, int c)
 	if (c == 4)
 		return (b_2);
 	return (0);
-	
+
 }
-
-
