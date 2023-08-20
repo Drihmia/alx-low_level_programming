@@ -1,9 +1,9 @@
 #include "main.h"
 
-int _pow(int m, int n);
-int _len(int n);
-void print_m(int n);
-void print_1(int n);
+unsigned int _pow(unsigned int m, unsigned int n);
+unsigned int _len(unsigned int n);
+void print_m(unsigned int n);
+void print_1(unsigned int n);
 
 
 /**
@@ -11,7 +11,7 @@ void print_1(int n);
  * @n: integer
  * Return: None
  */
-void print_number(int n)
+void print_number(unsigned int n)
 {
 	if (_len(n) == 1)
 	{
@@ -27,9 +27,9 @@ void print_number(int n)
  * @n: integer
  * Return: None
  */
-void print_m(int n)
+void print_m(unsigned int n)
 {
-	int a, i;
+	unsigned int a, i;
 
 	a = _len(n);
 	if (n >= 0)
@@ -57,7 +57,7 @@ void print_m(int n)
  * @n: integer
  * Return: None
  */
-void print_1(int n)
+void print_1(unsigned int n)
 {
 	if (n <= 9)
 		_putchar(n + '0');
@@ -73,9 +73,9 @@ void print_1(int n)
  * Return: number of digit in n
  */
 
-int _len(int n)
+unsigned int _len(unsigned int n)
 {
-	int i;
+	unsigned int i;
 
 	i = 0;
 	if (n < 0)
@@ -106,9 +106,9 @@ int _len(int n)
  * Return: m raised to n
  */
 
-int _pow(int m, int n)
+unsigned int _pow(unsigned int m, unsigned int n)
 {
-	int r, i;
+	unsigned int r, i;
 
 	r = 1;
 	for (i = 0; i < n; i++)

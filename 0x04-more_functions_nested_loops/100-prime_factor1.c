@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <math.h>
 
-int prime_nums_of(unsigned long int n, int ch);
-void _isdivisible(unsigned long int x, unsigned long int y);
+int prime_nums_of(long int n, int ch);
+void _isdivisible(long int x, long int y);
 
 
 /**
@@ -12,8 +12,8 @@ void _isdivisible(unsigned long int x, unsigned long int y);
 int main(void)
 {
 
-	unsigned long int num;
-	num = 1231952;
+	long int num;
+	num = 612852475143;
 	prime_nums_of(num, 0);
 	return (0);
 }
@@ -26,13 +26,12 @@ int main(void)
  * Return: value of z:
  */
 
-void _isdivisible(unsigned long int x, unsigned long int y)
+void _isdivisible(long int x, long int y)
 {
 	while (x % y == 0)
 	{
-		printf("The prime factor of %lu\n",x);
 		x = x / y;
-		printf("are : %lu \n", y);
+		printf("The prime factor of %ld are : %ld \n",x, y);
 	}
 }
 
@@ -44,19 +43,19 @@ void _isdivisible(unsigned long int x, unsigned long int y)
  * Return: the prime numbers.
  */
 
-int prime_nums_of(unsigned long int n, int ch)
+int prime_nums_of(long int n, int ch)
 {
-	unsigned long int i, j;
+	long int i, j;
 	int l;
 
-	for (i = 2; i <= n; i++)
+	for (i = 1; i <= n; i++)
 	{
 		l = 0;
-		for (j = 1; j <= i / 2; j++)
+		for (j = 1; j <= sqrt(i); j++)
 		{
 			/* check how many time i is divisible by j */
 			if (i % j == 0)
-				l += 1;
+				l = l + 1;
 		}
 		/* l == 1 means i is divisible only by 1 and itself */
 		if (l == 1)
@@ -66,7 +65,7 @@ int prime_nums_of(unsigned long int n, int ch)
 				_isdivisible(n, i);
 			}
 			if (ch == 1)
-				printf("%lu is prime numbers \n",i);
+				printf("%ld is prime numbers \n",i);
 		}
 	}
 	return (0);
