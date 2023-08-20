@@ -35,11 +35,12 @@ int main(void)
 		}
 		else if (it == 93)
 		{
+			print_92(a, b, 5);
 			m = print_92(a, b, 1);
 			n = print_92(a, b, 2);
 			l = print_92(a, b, 3);
 			p = print_92(a, b, 4);
-			p_93(m, n, l, p, 7);
+			p_93(m, n, l, p, 5);
 		}
 		else if (it == 94)
 		{
@@ -49,6 +50,7 @@ int main(void)
 			j = p_93(m, n, l, p, 2);
 			k = p_93(m, n, l, p, 3);
 			o = p_93(m, n, l, p, 4);
+			p_93(m, n, l, p, 1);
 
 			pl(i, j, k, o);
 		}
