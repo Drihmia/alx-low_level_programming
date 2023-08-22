@@ -2,11 +2,11 @@
 #include <stdio.h>
 
 /**
- * print_rev - print a reversed string to stdout followd by a new line
+ * rev_string - print a reversed string to stdout followd by a new line
  * @s: string
  * Return: None.
  */
-void print_rev(char *s)
+void rev_string(char *s)
 {
 	int j;
 
