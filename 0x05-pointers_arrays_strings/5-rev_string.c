@@ -2,22 +2,19 @@
 #include <stdio.h>
 
 /**
- * rev_string - print a reversed string to stdout followd by a new line
+ * print_rev - print a reversed string to stdout followd by a new line
  * @s: string
  * Return: None.
  */
-void rev_string(char *s)
+void print_rev(char *s)
 {
 	int j;
-	char *str = NULL;
 
-	str[10]=" ";
-	j = 0;
-	while (j < _strlen(s))
+	j = _strlen(s) - 1;
+	while (j >= 0)
 	{
-		str[j] = *(s + j);
-		_putchar(*(str + j));
-		j++;
+		_putchar(*(s + j));
+		j--;
 	}
 	_putchar('\n');
 }
