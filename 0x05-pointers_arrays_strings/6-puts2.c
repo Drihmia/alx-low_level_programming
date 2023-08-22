@@ -1,12 +1,11 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- * _puts2 - print a string to stdout
+ * puts2 - print a string to stdout
  * @str: string
  * Return: None.
  */
-void _puts2(char *str)
+void puts2(char *str)
 {
 	int i;
 
