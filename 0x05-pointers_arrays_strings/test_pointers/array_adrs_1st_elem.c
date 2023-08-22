@@ -35,7 +35,7 @@ int main(void)
 	p = a;
 	for (i = 0; i < 5; i++)
 	{
-		printf("the value of a element by element is : %d\n\n", *(a + i));
+		printf("the value of a element by element is : %d\n\n", *(p + i));
 	}
 
 	printf("Address of '&a': %p\n", &a);
