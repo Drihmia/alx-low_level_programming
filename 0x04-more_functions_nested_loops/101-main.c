@@ -12,6 +12,8 @@ int main(void)
 	_putchar('\n');
 	print_number(888764402);
 	_putchar('\n');
+	print_number(2147483647);
+	_putchar('\n');
 	print_number(INT_MAX);
 	_putchar('\n');
 	print_number(978658);

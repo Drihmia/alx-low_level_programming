@@ -1,7 +1,6 @@
 #include "main.h"
 #include <stdio.h>
 
-int arrlen(int *m);
 /**
  * print_array -  prints n elements of an array of integers
  * @a: integer
@@ -11,13 +10,9 @@ int arrlen(int *m);
 
 void print_array(int *a, int n)
 {
-	int i, *ptr;
-
-	ptr = a;
-
-	printf("sizeof array is %d\n", arrlen(a));
-	printf("sizeof *a is %lu\n", sizeof(ptr));
-	if ( n == ((sizeof(*a) + 1) / sizeof(a[0])))
+	int i;
+	printf("sizeof *a is %lu\n", sizeof(*a));
+	if ( n == (sizeof(*a) / sizeof(a[0])))
 	{
 		printf("%d", *a);
 		for (i = 1; i < n; i++)
@@ -28,18 +23,18 @@ void print_array(int *a, int n)
 	printf("\n");
 }
 /**
- * arrlen - determine the lenght of a string.
- * @m: integer
+ * _strlen - determine the lenght of a string.
+ * @s: character.
  * Return: return the lenght of the given string s.
  */
-int arrlen(int *m)
+int _strlen(char *s)
 {
 	int i;
 
 	i = 0;
-	while (*m != '\0')
+	while (*s != '\0')
 	{
-		m++;
+		s++;
 		i++;
 	}
 	return (i);
