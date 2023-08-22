@@ -1,24 +1,26 @@
 #include "main.h"
-#include <stdio.h>
+int _strlen(char *s);
+
 
 /**
- * rev_string - print a reversed string to stdout followd by a new line
+ * rev_string - print a reversed string to stdout.
  * @s: string
  * Return: None.
  */
 void rev_string(char *s)
 {
-	int j;
+	int i, j;
+	char intr;
 
 	j = _strlen(s) - 1;
-	while (j >= 0)
+	for (i = 0; i < j; i++)
 	{
-		_putchar(*(s + j));
+		intr = s[i];
+		s[i] = s[j];
+		s[j] = intr;
 		j--;
 	}
-	_putchar('\n');
 }
-
 /**
  * _strlen - determine the lenght of a string.
  * @s: character.
