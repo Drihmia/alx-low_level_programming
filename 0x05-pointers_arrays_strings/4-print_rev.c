@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * _puts - print a reversed string to stdout followd by a new line
+ * print_rev - print a reversed string to stdout followd by a new line
  * @s: string
  * Return: None.
  */
@@ -10,7 +10,7 @@ void print_rev(char *s)
 {
 	int i;
 
-	i = _strlen(s);
+	i = _strlen(s) + 1;
 	while (i > 0)
 	{
 		_putchar(*(s + i));
