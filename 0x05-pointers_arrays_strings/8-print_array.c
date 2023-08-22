@@ -10,9 +10,8 @@
 
 void print_array(int *a, int n)
 {
-	int i, *ptr;
+	int i;
 
-	ptr = a;
 	if ( n > 0)
 	{
 		printf("%d", *a);
