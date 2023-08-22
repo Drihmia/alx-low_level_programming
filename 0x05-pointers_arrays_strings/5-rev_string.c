@@ -15,7 +15,8 @@ void rev_string(char *s)
 	/* moving the point end to the end of string in the memory */
 	while (*end != '\0')
 		end++;
-	/** the very end of pointer end is a null char.
+	/**
+	 * the very end of pointer end is a null char.
 	 * so we shift it back with one position
 	 */
 	end--;
