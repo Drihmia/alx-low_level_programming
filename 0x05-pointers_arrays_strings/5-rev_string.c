@@ -1,40 +1,32 @@
 #include "main.h"
-int _strlen(char *s);
-
 
 /**
- * rev_string - print a reversed string to stdout.
+ * rev_string -  reverse string to stdout.
  * @s: string
  * Return: None.
  */
 void rev_string(char *s)
 {
-	int i, j;
+	/* pointers start and end are both have the address of 1st element*/
+	char *start = s;
+	char *end = s;
 	char intr;
 
-	j = _strlen(s) - 1;
-	for (i = 0; i < j; i++)
-	{
-		intr = s[i];
-		s[i] = s[j];
-		s[j] = intr;
-		j--;
-	}
-}
-/**
- * _strlen - determine the lenght of a string.
- * @s: character.
- * Return: return the lenght of the given string s.
- */
-int _strlen(char *s)
-{
-	int i;
+	/* moving the point end to the end of string in the memory */
+	while (*end != '\0')
+		end++;
+	/** the very end of pointer end is a null char.
+	 * so we shift it back with one position
+	 */
+	end--;
 
-	i = 0;
-	while (*s != '\0')
+	/* reversing proccess */
+	while (start < end)
 	{
-		s++;
-		i++;
+		intr = *start;
+		*start = *end;
+		*end = intr;
+		start++;
+		end--;
 	}
-	return (i);
 }
