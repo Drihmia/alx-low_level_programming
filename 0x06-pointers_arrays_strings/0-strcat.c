@@ -15,10 +15,9 @@ char *_strcat(char *dest, char *src)
 	}
 	while (*(src + i) != '\0')
 	{
-		*(dest + j) = *(src + i);
+		*(dest + j + i) = *(src + i);
 		i++;
-		j++;
 	}
-	*(dest + j) = *(src + i);
+	*(dest + j + i) = *(src + i);
 	return (dest);
 }
