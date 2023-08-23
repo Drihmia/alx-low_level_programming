@@ -18,12 +18,15 @@ char *_strncat(char *dest, char *src, int n)
 
 	while (src[i] != '\0')
 	{
-		if (i < n)
+		if (i >= n - 1)
+		{
 			break;
+		}
 		*(dest + j) = *(src + i);
 		i++;
 		j++;
 	}
-	*(dest + j) = *(src + i);
+	if (src[i] != '\0')
+		*(dest + j) = *(src + i);
 	return (dest);
 }

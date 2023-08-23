@@ -12,15 +12,27 @@ int main(void)
 	char s2[] = "World!\n";
 	char *ptr;
 
-	printf("%s\n", s1);
-	printf("%s", s2);
+	printf("---  s1  ---%s\n", s1);
+	printf("---  s2  ---%s", s2);
 	ptr = _strncat(s1, s2, 1);
-	printf("%s\n", s1);
-	printf("%s", s2);
-	printf("%s\n", ptr);
-	ptr = _strncat(s1, s2, 1024);
-	printf("%s", s1);
-	printf("%s", s2);
-	printf("%s", ptr);
+	printf("---  s1  ---%s\n", s1);
+	printf("---  s2  ---%s", s2);
+	printf("--- ptr  ---%s\n", ptr);
+	ptr = _strncat(s1, s2, 2);
+	printf("---  s1  ---%s\n", s1);
+	printf("---  s2  ---%s", s2);
+	printf("--- ptr  ---%s\n", ptr);
+	ptr = _strncat(s1, s2, 4);
+	printf("---  s1  ---%s\n", s1);
+	printf("---  s2  ---%s", s2);
+	printf("--- ptr  ---%s\n", ptr);
+	ptr = _strncat(s1, s2, 6);
+	printf("---  s1  ---%s\n", s1);
+	printf("---  s2  ---%s", s2);
+	printf("--- ptr  ---%s\n", ptr);
+	ptr = _strncat(s1, s2, 7);
+	printf("---  s1  ---%s\n", s1);
+	printf("---  s2  ---%s", s2);
+	printf("--- ptr  ---%s\n", ptr);
 	return (0);
 }
