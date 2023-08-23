@@ -39,8 +39,8 @@ int _atoi(char *s)
 
 	if (minus % 2 != 0)
 		sign = -1;
-	if (z ==1)
-		ret = sign;
+	if (z == 1)
+		ret = l;
 	else
 		ret = sign * l;
 	return (ret);
