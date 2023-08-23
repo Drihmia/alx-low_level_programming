@@ -3,7 +3,6 @@
 /**
  * _atoi - Converts a string to an integer
  * @s: The input string
- *
  * Return: The integer value
  */
 int _atoi(char *s)
@@ -35,5 +34,5 @@ int _atoi(char *s)
 	if (minus % 2 != 0)
 		sign = -1;
 	ret = sign * l;
-	return ret;
+	return (ret);
 }
