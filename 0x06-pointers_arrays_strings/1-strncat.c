@@ -2,12 +2,13 @@
 #include <stdio.h>
 
 /**
- * _strcat - concatenates two strings.
+ * _strncat - concatenates two strings at m bytes of the src.
  * @dest: pointer to distination.
- * @src: pointer to source
+ * @src: pointer to sourc
+ * @n: integer that represent bytes to be concatenated from src.
  * Return: dest.
  */
-char *_strcat(char *dest, char *src)
+char *_strncat(char *dest, char *src, int n)
 {
 	int i = 0, j = 0;
 
@@ -18,6 +19,8 @@ char *_strcat(char *dest, char *src)
 
 	while (src[i] != '\0')
 	{
+		if (i < n)
+			break;
 		*(dest + j) = *(src + i);
 		i++;
 		j++;
