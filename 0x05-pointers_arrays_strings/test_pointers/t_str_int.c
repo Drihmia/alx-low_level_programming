@@ -22,7 +22,7 @@ int main (void)
 			i++;
 		}
 		k++;
-		if (c[k] < '0' && c[k] > '9')
+		if (c[k] < '0' || c[k] > '9')
 		{
 			if (l > 0)
 				break;
