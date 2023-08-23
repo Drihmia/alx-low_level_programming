@@ -17,6 +17,8 @@ char *cap_string(char *c)
 			c[i] = (c[i] - 'a' + 'A');
 			sep = 0;
 		}
+		else if ((c[i] >= 65 && c[i] <= 92) && sep == 1)
+			sep = 0;
 		i++;
 		if (c[i] == ' ' || c[i] == '\t' || c[i] == '\n' || c[i] == ',')
 		{
