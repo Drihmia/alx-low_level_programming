@@ -10,6 +10,13 @@ char *cap_string(char *c)
 
 	while (c[i] != '\0')
 	{
+		if (i == 0)
+		{
+			if ((c[i] >= 97 && c[i] <= 122))
+
+				c[i] = (c[i] - 'a' + 'A');
+		}
+
 		if (sep == 1)
 		{
 			sep = 0;
