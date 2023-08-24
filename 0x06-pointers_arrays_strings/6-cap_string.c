@@ -15,7 +15,7 @@ char *cap_string(char *c)
 		if (sep == 1)
 		{
 			sep = 0;
-			if((c[i] >= 97 && c[i] <= 122))
+			if ((c[i] >= 97 && c[i] <= 122))
 			{
 				c[i] = (c[i] - 'a' + 'A');
 				i++;
