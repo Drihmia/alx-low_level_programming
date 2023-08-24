@@ -2,8 +2,6 @@
 /**
  * cap_string - capitalizes all words after separators of a string.
  * @c: pointer to char.
- * Separators of words: space, tabulation, new line, ,, ;, ., !, ?.
- * \", (, ), {, and }.
  * Return: capitalized string after separators.
  */
 char *cap_string(char *c)
