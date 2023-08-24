@@ -21,7 +21,7 @@ char *cap_string(char *c)
 				i++;
 			}
 		}
-		if (c[i] == ' ' || c[i] == '\t' || c[i] == '\n' || c[i] == ',')
+		if (c[i] == ' ' || c[i] == 9 || c[i] == 10 || c[i] == ',')
 		{
 			sep = 1;
 			i++;
@@ -36,7 +36,7 @@ char *cap_string(char *c)
 			sep = 1;
 			i++;
 		}
-		else if (c[i] == '{' || c[i] == '}')
+		else if (c[i] == '{' || c[i] == '}' || c[i] == 1)
 		{
 			sep = 1;
 			i++;
