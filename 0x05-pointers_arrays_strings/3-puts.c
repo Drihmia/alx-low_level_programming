@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * _puts2 - print a string to stdout
+ * _puts - print a string to stdout
  * @str: string
  * Return: None.
  */
@@ -14,7 +14,7 @@ void _puts(char *str)
 	while (i < _strlen(str))
 	{
 		_putchar(*(str + i));
-		i += 2;
+		i++;
 	}
 	_putchar('\n');
 }
