@@ -31,12 +31,12 @@ char *cap_string(char *c)
 			sep = 1;
 			i++;
 		}
-		else if (c[i] == '\"' || c[i] == '(' || c[i] == ')')
+		else if (c[i] == '"' || c[i] == '(' || c[i] == ')')
 		{
 			sep = 1;
 			i++;
 		}
-		else if (c[i] == '{' || c[i] == ')')
+		else if (c[i] == '{' || c[i] == '}')
 		{
 			sep = 1;
 			i++;
