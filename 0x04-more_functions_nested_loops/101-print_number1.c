@@ -1,8 +1,6 @@
 #include "main.h"
-
 int _pow(int m, int n);
 int _len(int n);
-
 
 /**
  * print_number - print integers
@@ -40,12 +38,12 @@ void print_number(int n)
 		_putchar(-(n % 10) + '0');
 	}
 }
+
 /**
  * _len - give a length of un integer.
  * @n: integer
  * Return: number of digit in n
  */
-
 int _len(int n)
 {
 	int i;
@@ -72,13 +70,13 @@ int _len(int n)
 		return (i);
 	}
 }
+
 /**
  * _pow - raised m to the power of n
  * @m: the base is an integer
  * @n: the exponent is an integer
  * Return: m raised to n
  */
-
 int _pow(int m, int n)
 {
 	int r, i;
