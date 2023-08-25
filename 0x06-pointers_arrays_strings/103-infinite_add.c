@@ -17,7 +17,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 
 	len1 = strlen(n1);
 	len2 = strlen(n2);
-	if (len1 + 1 > size_r || len2 + 1  > size_r)
+	if (len1 + 2 > size_r || len2 + 2  > size_r)
 		return (0);
 	i = len1 - 1;
 	j = len2 - 1;
