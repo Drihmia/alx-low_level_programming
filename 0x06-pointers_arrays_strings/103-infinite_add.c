@@ -1,6 +1,5 @@
 #include "main.h"
 #include <string.h>
-#include <stdio.h>
 void reverse_string(char *a);
 
 
@@ -15,7 +14,6 @@ void reverse_string(char *a);
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
 	int i = 0, j = 0, k = 0, overflow = 0, di_1, di_2, sum, len1, len2;
-
 
 	len1 = strlen(n1);
 	len2 = strlen(n2);
@@ -35,10 +33,8 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 			di_2 = 0;
 
 		sum = di_1 + di_2 + overflow;
-
 		overflow = sum / 10;
 		r[k] = sum % 10 + '0';
-
 		i--;
 		j--;
 		k++;
@@ -47,7 +43,6 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	reverse_string(r);
 	return (r);
 }
-
 
 /**
  * reverse_string - reverses string.
