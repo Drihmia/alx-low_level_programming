@@ -19,32 +19,29 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	len2 = strlen(n2);
 	if (len1 + 1 > size_r || len2 + 1  > size_r)
 		return (0);
-	else
+	i = len1 - 1;
+	j = len2 - 1;
+	while (i >= 0 || j >= 0 || overflow != 0)
 	{
-		i = len1 - 1;
-		j = len2 - 1;
-		while (i >= 0 || j >= 0 || overflow != 0)
-		{
-			if (i >= 0)
-				di_1 = n1[i] - '0';
-			else
-				di_1 = 0;
-			if (j >= 0)
-				di_2 = n2[j] - '0';
-			else
-				di_2 = 0;
+		if (i >= 0)
+			di_1 = n1[i] - '0';
+		else
+			di_1 = 0;
+		if (j >= 0)
+			di_2 = n2[j] - '0';
+		else
+			di_2 = 0;
 
-			sum = di_1 + di_2 + overflow;
-			overflow = sum / 10;
-			r[k] = sum % 10 + '0';
-			i--;
-			j--;
-			k++;
-		}
-		r[k] = '\0';
-		reverse_string(r);
-		return (r);
+		sum = di_1 + di_2 + overflow;
+		overflow = sum / 10;
+		r[k] = sum % 10 + '0';
+		i--;
+		j--;
+		k++;
 	}
+	r[k] = '\0';
+	reverse_string(r);
+	return (r);
 }
 
 /**
