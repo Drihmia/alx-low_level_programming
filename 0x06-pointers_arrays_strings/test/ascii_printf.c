@@ -7,9 +7,9 @@ int main(void)
 {
 	int i, j, k, l = 0, non_p;
 	char n[] = "This is a string!\0And this is the rest of the #buffer :)\1\2\3\4\5\6\7#cisfun\n\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x20\x21\x34\x56#pointersarefun #infernumisfun\n";
+	printf("size of buffer is %lu\n", sizeof(n));
 	
-	
-	while (l + 1  < sizeof(n))
+	while (l + 0  < sizeof(n))
 	{
 		non_p = isprint(*(n + l));
 		if (non_p == 0)
@@ -18,6 +18,7 @@ int main(void)
 		}
 		l++;
 	}
+	*(n + l) = '\n';
 	i = 0;
 	while (i < sizeof(n))
 	{

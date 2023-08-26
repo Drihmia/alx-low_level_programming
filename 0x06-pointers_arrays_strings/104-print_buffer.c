@@ -11,33 +11,34 @@ size_t count_characters(const char *str);
  */
 void print_buffer(char *b, int size)
 {
-	int i, j, k, l = 0, non_p;
+	int i, j, k, non_p;
 
-	while (l < size)
-	{
-		non_p = isprint(*(b + l));
-		if (non_p == 0)
-		{
-			*(b + l) = '.';
-		}
-		l++;
-	}
 	i = 0;
 	while (i < size)
 	{
 		printf("%010x: ", i);
+
 		for (j = i; j < 10 + i; j++)
 		{
-			printf("%02x", b[j]);
+			if (j < size)
+				printf("%02x", b[j]);
+			else
+				printf("  ");
 			if (j % 2 == 1)
 				printf(" ");
-			if (j + 1 > size)
+		}
+
+
+		for (k = i; k < 10 + i; k++)
+		{
+			non_p = isprint(*(b + k));
+			if (non_p == 1)
+				printf("%c", b[k]);
+			else
+				printf(".");
+			if (k + 2 > size)
 				break;
 		}
-		for (k = i; k < 10 + i; k++)
-			printf("%c", b[k]);
-			if (k + 1 > size)
-				break;
 		printf("\n");
 		i += 10;
 	}
