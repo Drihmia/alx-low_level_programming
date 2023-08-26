@@ -31,8 +31,8 @@ void print_buffer(char *b, int size)
 			printf("%02x", b[j]);
 			if (j % 2 == 1)
 				printf(" ");
-			//if (j > size)
-			//	break;
+			if (j > size)
+				break;
 				
 		}
 		for (k = i; k < 10 + i; k++)
