@@ -36,7 +36,7 @@ void print_buffer(char *b, int size)
 			for (k = i; k < 10 + i && k < size; k++)
 			{
 				non_p = isprint(*(b + k));
-				if (non_p == 1)
+				if (non_p != 0)
 					printf("%c", b[k]);
 				else
 					printf(".");
