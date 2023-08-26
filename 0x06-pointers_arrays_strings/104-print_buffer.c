@@ -29,15 +29,13 @@ void print_buffer(char *b, int size)
 		}
 
 
-		for (k = i; k < 10 + i; k++)
+		for (k = i; k < 10 + i && k < size; k++)
 		{
 			non_p = isprint(*(b + k));
 			if (non_p == 1)
 				printf("%c", b[k]);
 			else
 				printf(".");
-			if (k + 2 > size)
-				break;
 		}
 		printf("\n");
 		i += 10;
