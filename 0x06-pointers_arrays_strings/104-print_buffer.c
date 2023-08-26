@@ -47,18 +47,3 @@ void print_buffer(char *b, int size)
 	}
 
 }
-/**
- * count_characters - print a buffer
- * @str: pointer to char.
- * Return: count
- */
-
-size_t count_characters(const char *str)
-{
-	int count = 0, i;
-
-	for (i = 0; str[i] != '\0'; i++)
-		count++;
-	return (count);
-}
-
