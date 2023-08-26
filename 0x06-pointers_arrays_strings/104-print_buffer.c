@@ -33,7 +33,6 @@ void print_buffer(char *b, int size)
 				printf(" ");
 			if (j > size)
 				break;
-				
 		}
 		for (k = i; k < 10 + i; k++)
 			printf("%c", b[k]);
@@ -43,6 +42,11 @@ void print_buffer(char *b, int size)
 		i += 10;
 	}
 }
+/**
+ * count_characters - print a buffer
+ * @str: pointer to char.
+ * Return: count
+ */
 
 size_t count_characters(const char *str)
 {
