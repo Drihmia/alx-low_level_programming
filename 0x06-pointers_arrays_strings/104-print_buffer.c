@@ -31,11 +31,14 @@ void print_buffer(char *b, int size)
 			printf("%02x", b[j]);
 			if (j % 2 == 1)
 				printf(" ");
-			if (j + 1 > size)
-				break;
+			//if (j > size)
+			//	break;
+				
 		}
 		for (k = i; k < 10 + i; k++)
 			printf("%c", b[k]);
+			if (k > size)
+				break;
 		printf("\n");
 		i += 10;
 	}
