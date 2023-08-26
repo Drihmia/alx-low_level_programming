@@ -13,36 +13,39 @@ void print_buffer(char *b, int size)
 {
 	int i, j, k, non_p;
 
-	i = 0;
-	while (i < size && size > 0)
-	{
-		printf("%08x: ", i);
-
-		for (j = i; j < 10 + i; j++)
-		{
-			if (j < size)
-				printf("%02x", b[j]);
-			else
-				printf("  ");
-			if (j % 2 == 1)
-				printf(" ");
-		}
-
-
-		for (k = i; k < 10 + i && k < size; k++)
-		{
-			non_p = isprint(*(b + k));
-			if (non_p == 1)
-				printf("%c", b[k]);
-			else
-				printf(".");
-		}
+	if (size <= 1)
 		printf("\n");
-		i += 10;
+	else
+	{
+		i = 0;
+		while (i < size)
+		{
+			printf("%08x: ", i);
+
+			for (j = i; j < 10 + i; j++)
+			{
+				if (j < size)
+					printf("%02x", b[j]);
+				else
+					printf("  ");
+				if (j % 2 == 1)
+					printf(" ");
+			}
+
+
+			for (k = i; k < 10 + i && k < size; k++)
+			{
+				non_p = isprint(*(b + k));
+				if (non_p == 1)
+					printf("%c", b[k]);
+				else
+					printf(".");
+			}
+			printf("\n");
+			i += 10;
+		}
 	}
 
-	if (size <= 0)
-		printf("\n");
 }
 /**
  * count_characters - print a buffer
