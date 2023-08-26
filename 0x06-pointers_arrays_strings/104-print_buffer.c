@@ -13,7 +13,7 @@ void print_buffer(char *b, int size)
 {
 	int i, j, k, l = 0, non_p;
 
-	while (l + 1  < size)
+	while (l < size)
 	{
 		non_p = isprint(*(b + l));
 		if (non_p == 0)
