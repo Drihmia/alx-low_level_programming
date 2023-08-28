@@ -11,6 +11,7 @@
 char *_strpbrk(char *s, char *accept)
 {
 	int i = 0, j;
+	char *ret;
 
 	while (*(s + i))
 	{
@@ -24,7 +25,10 @@ char *_strpbrk(char *s, char *accept)
 		i++;
 	}
 	if (*(s + i) == *(accept + j))
-		return ((s + i));
+	{
+		ret = (s + i);
+		return (ret);
+	}
 	else
 		return (NULL);
 }
