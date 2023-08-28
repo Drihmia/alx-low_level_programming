@@ -1,4 +1,6 @@
 #include "main.h"
+#include <stddef.h>
+
 
 /**
  * _strstr -  finds the first occurrence of the substring needle
@@ -11,6 +13,7 @@
 char *_strstr(char *haystack, char *needle)
 {
 	int i = 0, j;
+	char *p = NULL;
 
 	while (*(needle + i))
 	{
@@ -20,11 +23,11 @@ char *_strstr(char *haystack, char *needle)
 			j++;
 		}
 		if (*(haystack + j) == *(needle + i))
+		{
+			p = (haystack + j);
 			break;
+		}
 		i++;
 	}
-	if (*(needle + i) == *(haystack + j))
-		return ((needle + i));
-	else
-		return (0);
+	return (p);
 }
