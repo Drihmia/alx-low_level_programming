@@ -29,26 +29,25 @@ char *_strstr(char *haystack, char *needle)
 		j = 0;
 
 		/* found a match and we star compairing fron that match and on */
-		while (*(haystack + i) == *(needle + j) && found == 1)
+		while (*(haystack + i) == *(needle + j) && found == 1 && *(haystack + i))
 		{
 			i++;
 			j++;
 
-			/**
-			 * if we reach the NULL terminating in needle we decrement i and j by 1.
-			 * and break from this loop and give order to outer loop to break too.
-			 */
 			if (*(needle + i))
 			{
 				i--;
 				j--;
 				out = 1;
+				return ((haystack + k));
 				break;
 			}
 		}
+		if (*(needle + j) != '\0' && out == 0)
+			break;
 		if (out)
 			break;
 		i++;
 	}
-	return ((haystack + k));
+	return (p);
 }
