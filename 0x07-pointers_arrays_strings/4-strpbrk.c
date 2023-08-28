@@ -10,25 +10,25 @@
  */
 char *_strpbrk(char *s, char *accept)
 {
+	char *p = NULL;
 	int i = 0, j;
-	char *ret;
+
+	if (*(accept + 0) == '\0' || *(s + 0) == '\0')
+		return (p);
 
 	while (*(s + i))
 	{
 		j = 0;
-		while (*(accept + j) != *(s + i) && *(accept + j))
+		while (*(s + i) != *(accept + j) && *(accept + j))
 		{
 			j++;
 		}
-		if (*(accept + j) == *(s + i) || *(accept + 0) == '\0')
+		if (*(s + i) == *(accept + j))
+		{
+			p = (s + i);
 			break;
+		}
 		i++;
 	}
-	if (*(s + i) == *(accept + j))
-	{
-		ret = (s + i);
-		return (ret);
-	}
-	else
-		return (NULL);
+	return (p);
 }
