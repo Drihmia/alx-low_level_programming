@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stddef.h>
+#include <string.h>
 
 
 /**
@@ -12,24 +13,42 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
-	int i = 0, j;
+	int i = 0, j, found = 0, out = 0, k;
 	char *p = NULL;
 
 	if (*(needle + i) == '\0')
 		return (p);
-	while (*(needle + i))
+	while (*(haystack + i))
 	{
+		/* if the 1st occurrence is found then found is True */
+		if (*(haystack + i) == *needle)
+		{
+			found = 1;
+			k = i;
+		}
 		j = 0;
-		while (*(haystack + j) != *(needle + i) && *(haystack + j))
+
+		/* found a match and we star compairing fron that match and on */
+		while (*(haystack + i) == *(needle + j) && found == 1)
 		{
+			i++;
 			j++;
+
+			/**
+			 * if we reach the NULL terminating in needle we decrement i and j by 1.
+			 * and break from this loop and give order to outer loop to break too.
+			 */
+			if (*(needle + i))
+			{
+				i--;
+				j--;
+				out = 1;
+				break;
+			}
 		}
-		if (*(haystack + j) == *(needle + i))
-		{
-			p = (haystack + j);
+		if (out)
 			break;
-		}
 		i++;
 	}
-	return (p);
+	return ((haystack + k));
 }
