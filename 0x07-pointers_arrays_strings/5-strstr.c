@@ -13,8 +13,10 @@
 char *_strstr(char *haystack, char *needle)
 {
 	int i = 0, j;
-	char *p = (haystack + 0);
+	char *p = (haystack + 0), *e = NULL;
 
+	if (*(needle + i) == '\0')
+		return (e);
 	while (*(needle + i))
 	{
 		j = 0;
