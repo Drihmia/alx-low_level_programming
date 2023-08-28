@@ -18,12 +18,12 @@ char *_strpbrk(char *s, char *accept)
 		{
 			j++;
 		}
-		if (*(accept + j) == *(s + i))
+		if (*(accept + j) == *(s + i) || *(accept + 0) == '\0')
 			break;
 		i++;
 	}
 	if (*(s + i) == *(accept + j))
-		return ((s + i));
+		return ((s + i - 2));
 	else
 		return (0);
 }
