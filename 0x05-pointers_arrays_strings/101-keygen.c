@@ -1,38 +1,62 @@
+/* Rule 1: Adhere to C89 standards and Betty style of coding in your C programs. */
+
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
 
-/* Function Prototypes */
-int* generateAllPossibilities(void);
+/* Rule 2: Always provide function prototypes before using or defining functions in your code. */
+int findCharSet(char *charSet, int setSize);
 
+/* Rule 3: Include 'void' within parentheses for clarity if 'main' doesn't take parameters. */
 int main(void) {
-    srand(time(NULL)); // Initialize random seed using the current time
+	char charSet[5];  // Adjust size as needed
+	int setSize = sizeof(charSet) / sizeof(charSet[0]);
 
-    int* possibilities = generateAllPossibilities();
+	int result = findCharSet(charSet, setSize);
 
-    // Use the possibilities array as needed
+	if (result) {
+		printf("Character set found: ");
+		for (int i = 0; i < setSize; i++) {
+			printf("%c ", charSet[i]);
+		}
+		printf("\n");
+	} else {
+		printf("No character set found for the given sum.\n");
+	}
 
-    free(possibilities); // Remember to free the allocated memory
-
-    return 0;
+	return 0;
 }
 
+/* Rule 8: Use proper Doxygen-style documentation for functions. */
 /**
- * generateAllPossibilities - Generates all possible 4-digit numbers and returns them as an array.
- * Return: Pointer to the array of possible 4-digit numbers.
+ * findCharSet - Find a set of characters with a specific ASCII value sum
+ * @charSet: Array to store the characters
+ * @setSize: Size of the character set
+ * Return: 1 if a valid character set is found, 0 otherwise
  */
-int* generateAllPossibilities(void) {
-    int* possibilities = (int*)malloc(10000 * sizeof(int)); // Allocate memory for the array
+int findCharSet(char *charSet, int setSize) {
+	if (setSize == 0) {
+		return 0;
+	}
 
-    if (possibilities == NULL) {
-        perror("Memory allocation failed");
-        exit(EXIT_FAILURE);
-    }
+	int targetSum = 2772;
+	charSet[setSize - 1] = targetSum; // Last character will be the remaining sum
 
-    for (int i = 0; i < 10000; ++i) {
-        possibilities[i] = i; // Store the current 4-digit number in the array
-    }
+	for (int i = 0; i < setSize - 1; i++) {
+		charSet[i] = 1; // Start with a base value for each character
+		targetSum -= charSet[i];
+	}
 
-    return possibilities;
+	// Distribute the remaining sum among characters
+	for (int i = 0; i < setSize - 1; i++) {
+		int diff = 127 - charSet[i]; // ASCII value limit
+		if (targetSum >= diff) {
+			charSet[i] += diff;
+			targetSum -= diff;
+		} else {
+			charSet[i] += targetSum;
+			break;
+		}
+	}
+
+	return targetSum == 0;
 }
 
