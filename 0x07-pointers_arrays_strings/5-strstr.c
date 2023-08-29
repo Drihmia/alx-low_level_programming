@@ -17,7 +17,7 @@ char *_strstr(char *haystack, char *needle)
 	char *p = NULL;
 
 	if (*(needle + i) == '\0')
-		return (p);
+		return (*haystack);
 	while (*(haystack + i))
 	{
 		/* if the 1st occurrence is found then found is True */
@@ -34,7 +34,7 @@ char *_strstr(char *haystack, char *needle)
 			i++;
 			j++;
 
-			if (*(needle + i))
+			if (!*(needle + i))
 			{
 				i--;
 				j--;
