@@ -39,7 +39,7 @@ char *_strstr(char *haystack, char *needle)
 			return ((haystack + k));
 		}
 		else
-			return (p);
+			found = 0;
 		i++;
 	}
 	return (p);
