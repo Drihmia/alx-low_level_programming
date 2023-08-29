@@ -13,11 +13,11 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
-	int i = 0, j, found = 0, out = 0, k;
+	int i = 0, j, found = 0, k;
 	char *p = NULL;
 
 	if (*(needle + i) == '\0')
-		return (*haystack);
+		return (haystack);
 	while (*(haystack + i))
 	{
 		/* if the 1st occurrence is found then found is True */
@@ -29,23 +29,15 @@ char *_strstr(char *haystack, char *needle)
 		j = 0;
 
 		/* found a match and we star compairing fron that match and on */
-		while (*(haystack + i) == *(needle + j) && found == 1 && *(haystack + i))
+		while (*(haystack + j) == *(needle + j) && found == 1 && *(haystack + i))
 		{
-			i++;
 			j++;
-
-			if (!*(needle + i))
-			{
-				i--;
-				j--;
-				out = 1;
-				return ((haystack + k));
-				break;
-			}
 		}
-		if (*(needle + j) != '\0' && out == 0)
-			break;
-		if (out)
+		if (!*(needle + j))
+		{
+			return ((haystack + k));
+		}
+		else
 			break;
 		i++;
 	}
