@@ -13,7 +13,7 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
-	int i = 0, j, found = 0, k;
+	int i = 0, j, found = 0, k, n;
 	char *p = NULL;
 
 	if (*(needle + i) == '\0')
@@ -27,10 +27,11 @@ char *_strstr(char *haystack, char *needle)
 			k = i;
 		}
 		j = 0;
-
+		n = i;
 		/* found a match and we star compairing fron that match and on */
-		while (*(haystack + j) == *(needle + j) && found == 1 && *(haystack + i))
+		while (*(haystack + n) == *(needle + j) && found == 1 && *(haystack + n))
 		{
+			n++;
 			j++;
 		}
 		if (!*(needle + j))
