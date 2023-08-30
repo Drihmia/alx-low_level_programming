@@ -9,10 +9,11 @@ int search_prime_num(int n, int guess);
 
 int is_prime_number(int n)
 {
-	if (n == 1 || n == -1 || n == 0)
+	if (n == 1 || n == 0)
 		return (0);
-	else
-		return (search_prime_num(n, 2));
+	else if (n < 0)
+		return (0);
+	return (search_prime_num(n, 2));
 }
 
 /* before in enter this function, i have excluded divisibility by 1, */
