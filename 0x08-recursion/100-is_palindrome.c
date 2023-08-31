@@ -1,5 +1,5 @@
 #include "main.h"
-int _strlen_recursion(char *s);
+int _strlen_r(char *s);
 int search_palindrom(char *st_l, char *st_r, int half);
 
 
@@ -10,16 +10,22 @@ int search_palindrom(char *st_l, char *st_r, int half);
  */
 int is_palindrome(char *s)
 {
-	if (_strlen_recursion(s) < 2)
+	if (_strlen_r(s) < 2)
 		return (1);
-	//if (_strlen_recursion(s) % 2 != 0)
-	return (search_palindrom(s, (s + _strlen_recursion(s) - 1),_strlen_recursion(s) / 2 ));
+	return (search_palindrom(s, (s + _strlen_r(s) - 1), _strlen_r(s) / 2));
 }
 
+/**
+ * search_palindrom - compare if two strings are the same.
+ * @st_l: first string (left half).
+ * @st_r: 2nd string (right half).
+ * @half: integer a number (length of each string
+ * Return: 1 if they identical or 0 if not.
+ */
 
 int search_palindrom(char *st_l, char *st_r, int half)
 {
-	if (_strlen_recursion(st_l) == half + 1)
+	if (_strlen_r(st_r) == half + 1)
 		return (1);
 	if (*st_l == *st_r)
 		return (search_palindrom(st_l + 1, st_r - 1, half));
@@ -29,15 +35,15 @@ int search_palindrom(char *st_l, char *st_r, int half)
 
 
 /**
- * _strlen_recursion - give the length of a string(from previous tasks)
+ * _strlen_r - give the length of a string(from previous tasks)
  * @str: pointer to string
  * Return: None
  */
-int _strlen_recursion(char *str)
+int _strlen_r(char *str)
 {
 	if (*(str + 1) == '\0')
 		return (1);
 	else if (*str == '\0')
 		return (0);
-	return ((((str + 1)) - (str)) + _strlen_recursion(str + 1));
+	return ((((str + 1)) - (str)) + _strlen_r(str + 1));
 }
