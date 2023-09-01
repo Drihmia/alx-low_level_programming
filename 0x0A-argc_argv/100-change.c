@@ -43,29 +43,4 @@ int change_recursion(int money, int N_coins)
 		money = money - 25 * N_coins;
 		return (change_recursion(money, N_coins));
 	}
-	else if (money >= 10)
-	{
-		N_coins += money / 10;
-		money = money - 10 * N_coins;
-		return (change_recursion(money, N_coins));
-	}
-	else if (money >= 5)
-	{
-		N_coins += money / 5;
-		money = money - 5 * N_coins;
-		return (change_recursion(money, N_coins));
-	}
-	else if (money >= 2)
-	{
-		N_coins += money / 2;
-		money = money - 2 * N_coins;
-		return (change_recursion(money, N_coins));
-	}
-	else if (money == 1)
-	{
-		N_coins += money / 1;
-		money = money - 1 * N_coins;
-		return (change_recursion(money, N_coins));
-	}
-	return (N_coins);
 }
