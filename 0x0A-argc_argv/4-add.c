@@ -11,7 +11,7 @@
  */
 int main(int argc, char **argv)
 {
-	int i, add = 0;
+	int i, j, digit, num, add = 0;
 
 	if (argc == 1)
 	{
@@ -21,13 +21,19 @@ int main(int argc, char **argv)
 	{
 		for (i = 1; i < argc; i++)
 		{
-			if (atoi(*(argv + i)) != 0)
-				add += atoi(*(argv + i));
-			else
+			num = 0;
+			for (j = 0; argv[i][j] != '\0'; j++)
 			{
-				printf("Error\n");
-				return (1);
+				digit = argv[i][j] - '0';
+				if (digit >= 0 && digit <= 9)
+					num = num * 10 + digit;
+				else
+				{
+					printf("Error\n");
+					return (1);
+				}
 			}
+			add += num;
 		}
 		printf("%d\n", add);
 	}
