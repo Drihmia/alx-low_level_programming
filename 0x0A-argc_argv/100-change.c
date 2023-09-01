@@ -1,6 +1,6 @@
+#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
-int change_recursion(int money, int N_coins);
 
 /**
  * main - prints the minimum number of coins to make change for
