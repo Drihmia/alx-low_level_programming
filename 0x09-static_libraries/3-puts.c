@@ -7,31 +7,11 @@
  */
 void _puts(char *s)
 {
-	int i;
-
-	i = 0;
-	while (i < _strlen(str))
+	if (*s == '\0')
 	{
-		_putchar(*(str + i));
-		i++;
+		_putchar('\n');
+		return;
 	}
-	_putchar('\n');
-}
-
-/**
- * _strlen - determine the lenght of a string.
- * @s: character.
- * Return: return the lenght of the given string s.
- */
-int _strlen(char *s)
-{
-	int i;
-
-	i = 0;
-	while (*s != '\0')
-	{
-		s++;
-		i++;
-	}
-	return (i);
+	_putchar(*s);
+	_puts((s + 1));
 }
