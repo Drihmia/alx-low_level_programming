@@ -64,9 +64,7 @@ int change_recursion(int money, int N_coins)
 	}
 	else if (money == 1)
 	{
-		N_coins += money / 1;
-		money = money - 1 * N_coins;
-		return (change_recursion(money, N_coins));
+		return (change_recursion(money - 1, N_coins + 1));
 	}
 	return (N_coins);
 }
