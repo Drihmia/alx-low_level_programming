@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * main - prints the minimum number of coins to make change for
@@ -10,14 +11,17 @@
  */
 int main(int argc, char **argv)
 {
+	int money;
+
 	if (argc == 2)
 	{
-		if (atoi(argv[argc - 1]) < 0)
+		money = atoi(argv[argc - 1]);
+		if (money < 0)
 		{
 			printf("0\n");
 		}
 		else
-			printf("%d\n", change_recursion(atoi(argv[argc - 1]), 0));
+			printf("%d\n", change_recursion(money, 0));
 	}
 	else
 	{
