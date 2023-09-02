@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stdlib>
+#include <stdlib.h>
 
 
 /**
@@ -11,17 +11,47 @@
  */
 int main(int argc, char **argv)
 {
-	int money;
+	int money, coins = 0;
 
 	if (argc == 2)
 	{
-		money = atoi(argv[argc - 1]);
-		if (money < 0)
+		if (money <= 0)
 		{
 			printf("0\n");
 		}
 		else
-			printf("%d\n", change_recursion(money, 0));
+		{
+			printf("%d\n", money);
+			while (money != 0)
+			{
+				if (money >= 25)
+				{
+					coins += money / 25;
+					money = money - 25 * coins;
+				}
+				else if (money < 25 && money >= 10)
+				{
+					coins += money / 10;
+					money = money - 10 * coins;
+				}
+				else if (money < 10 && money >= 5)
+				{
+					coins += money / 5;
+					money = money - 5 * coins;
+				}
+				else if (money < 5 && money >= 2)
+				{
+					coins += money / 2;
+					money = money - 2 * coins;
+				}
+				else
+				{
+					coins += 1;
+					money = 0;
+				}
+			}
+			printf("%d\n", coins);
+		}
 	}
 	else
 	{
@@ -29,5 +59,3 @@ int main(int argc, char **argv)
 		return (1);
 	}
 }
-
-
