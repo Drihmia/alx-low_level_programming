@@ -45,33 +45,30 @@ int change(int money)
 {
 	int coins = 0;
 
-	while (money != 0)
-	{
-		if (money >= 25)
+		while (money >= 25)
 		{
-			coins += money / 25;
-			money = money - 25 * coins;
+			coins ++;
+			money -= 25;
 		}
-		else if (money < 25 && money >= 10)
+		while (money < 25 && money >= 10)
 		{
-			coins += money / 10;
-			money = money - 10 * coins;
+			coins ++;
+			money -= 10;
 		}
-		else if (money < 10 && money >= 5)
+		while (money < 10 && money >= 5)
 		{
-			coins += money / 5;
-			money = money - 5 * coins;
+			coins ++;
+			money -= 5;
 		}
-		else if (money < 5 && money >= 2)
+		while (money < 5 && money >= 2)
 		{
-			coins += money / 2;
-			money = money - 2 * coins;
+			coins ++;
+			money -= 2;
 		}
-		else
+		if (money == 1)
 		{
-			coins += 1;
-			money = 0;
-		}
+			coins ++;
+			money = -1;
 	}
 	return (coins);
 }
