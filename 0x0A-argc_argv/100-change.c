@@ -17,7 +17,7 @@ int main(int argc, char **argv)
 	if (argc == 2)
 	{
 		money = atoi(argv[argc - 1]);
-		if (money <= 0)
+		if (money < 0)
 		{
 			printf("0\n");
 		}
