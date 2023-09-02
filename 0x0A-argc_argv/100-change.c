@@ -47,27 +47,27 @@ int change(int money)
 
 		while (money >= 25)
 		{
-			coins ++;
+			coins++;
 			money -= 25;
 		}
 		while (money < 25 && money >= 10)
 		{
-			coins ++;
+			coins++;
 			money -= 10;
 		}
 		while (money < 10 && money >= 5)
 		{
-			coins ++;
+			coins++;
 			money -= 5;
 		}
 		while (money < 5 && money >= 2)
 		{
-			coins ++;
+			coins++;
 			money -= 2;
 		}
 		if (money == 1)
 		{
-			coins ++;
+			coins++;
 			money = -1;
 	}
 	return (coins);
