@@ -4,7 +4,7 @@
 #include <string.h>
 
 /**
- * _strdup - concatenates two strings
+ * str_concat - concatenates two strings
  * @s1: pointer to the 1st string.
  * @s2: pointer to the 2nd string.
  * Return: pointer to newly allocated space that contains s1 + s2.
@@ -21,7 +21,7 @@ char *str_concat(char *s1, char *s2)
 
 	if (np == NULL)
 		return (NULL);
-	while (i <= strlen(s1) + strlen(s2))
+	while (i < strlen(s1) + strlen(s2))
 	{
 		if (i < strlen(s1))
 			*(np + i) = *(s1 + i);
@@ -32,5 +32,6 @@ char *str_concat(char *s1, char *s2)
 		}
 		i++;
 	}
+	*(np + i) = '\0'
 	return (np);
 }
