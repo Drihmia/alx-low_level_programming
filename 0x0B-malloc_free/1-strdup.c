@@ -27,5 +27,6 @@ char *_strdup(char *str)
 		*(np + i) = *(str + i);
 		i++;
 	}
+	*(np + i) = *(str + i);
 	return (np);
 }
