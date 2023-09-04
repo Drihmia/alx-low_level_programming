@@ -21,7 +21,7 @@ char *_strdup(char *str)
 
 	if (np == NULL)
 		return (NULL);
-	while (i <= sizeof(str))
+	while (i < sizeof(str))
 	{
 		*(np + i) = *(str + i);
 		i++;
