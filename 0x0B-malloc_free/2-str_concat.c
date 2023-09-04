@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+int len_2_str(char *st1, char *st2);
 
 /**
  * str_concat - concatenates two strings
@@ -12,26 +13,20 @@
 
 char *str_concat(char *s1, char *s2)
 {
-	unsigned long int i = 0;
+	int i = 0;
 	int j = 0;
 	char *np;
 
-	if (s1 ==  NULL && s2 ==  NULL)
-	{
-	np = malloc(sizeof(char));
-		*np = '\0';
-		return (np);
-	}
 
-	np = malloc((strlen(s1) + strlen(s2) + 1) * sizeof(char));
+	np = malloc((len_2_str(s1, s2) + 1) * sizeof(char));
 
 	if (np == NULL)
 		return (NULL);
-	while (i < strlen(s1) + strlen(s2))
+	while (i < len_2_str(s1, s2))
 	{
-		if (i < strlen(s1))
+		if (i < len_2_str(s1, ""))
 			*(np + i) = *(s1 + i);
-		else if (i >= strlen(s1))
+		else if (i >= len_2_str(s1, ""))
 		{
 			*(np + i) = *(s2 + j);
 			j++;
@@ -40,4 +35,23 @@ char *str_concat(char *s1, char *s2)
 	}
 	*(np + i) = '\0';
 	return (np);
+}
+
+/**
+ * len_2_str - give the length of 2 str, termonator is excluded.
+ * @st1: pointer to the 1st string.
+ * @st2: pointer to the 2nd string.
+ * Return: lenght in digit.
+ */
+
+int len_2_str(char *st1, char *st2)
+{
+	int len;
+	if (st1 != NULL && st2 == NULL)
+		len = strlen(st1);
+	if (st1 == NULL && st2 != NULL)
+		len = strlen(st2);
+	if (st1 == NULL && st2 == NULL)
+		len = 0;
+	return (len);
 }
