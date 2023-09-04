@@ -6,11 +6,12 @@
 # Resources
 ## Read or watch:
 
-[0x0a - malloc & free - quick overview.pdf]().
+[0x0a - malloc & free - quick overview.pdf](https://github.com/Drihmia/alx-low_level_programming/blob/5ccd67a88eb4f2f0a908c6e4f054a99397394a50/0x0B-malloc_free/a094c90e7f466bbeaa49cb24c8f04e7f27aaad41.pdf).
+
 [Dynamic memory allocation in C - malloc calloc realloc free](https://www.youtube.com/watch?v=xDVC3wKjS64&ab_channel=mycodeschool) (stop at 6:50)`
 ## man or help:
-** malloc
-** free
+* malloc
+* free
 ---
 # Learning Objectives
 **At the end of this project, you are expected to be able to explain to anyone, without the help of Google:**
