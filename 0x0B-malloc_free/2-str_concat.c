@@ -47,11 +47,14 @@ char *str_concat(char *s1, char *s2)
 int len_2_str(char *st1, char *st2)
 {
 	int len;
+
 	if (st1 != NULL && st2 == NULL)
 		len = strlen(st1);
-	if (st1 == NULL && st2 != NULL)
+	else if (st1 == NULL && st2 != NULL)
 		len = strlen(st2);
-	if (st1 == NULL && st2 == NULL)
+	else if (st1 == NULL && st2 == NULL)
 		len = 0;
+	else if (st1 != NULL && st2 != NULL)
+		len = strlen(st1) + strlen(st2);
 	return (len);
 }
