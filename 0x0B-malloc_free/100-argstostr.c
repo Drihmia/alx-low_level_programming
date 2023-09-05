@@ -13,14 +13,15 @@ char *argstostr(int ac, char **av)
 {
 	int i, j, sum = 0, l;
 	char *str;
+
 	if (ac == 0 || av == NULL)
 		return (NULL);
 
 	for (i = 0; i < ac; i++)
 	{
-		sum += strlen(av[i]) + 2;
+		sum += strlen(av[i]) + 1;
 	}
-	str = malloc(sum * sizeof(char));
+	str = malloc((sum + 1) * sizeof(char));
 	if (str == NULL)
 	{
 		free(str);
