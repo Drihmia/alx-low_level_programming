@@ -54,7 +54,12 @@ char **strtow(char *str)
 		for (; *(str + i) == ' '; i++)
 			;
 		if (*(str + i) == '\0')
+		{
+		if(words == 0)
+			return (NULL);
+		else
 			break;
+		}
 	}
 	return (ar_2);
 }
