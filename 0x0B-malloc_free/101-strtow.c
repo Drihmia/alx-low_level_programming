@@ -56,7 +56,7 @@ char **strtow(char *str)
 			;
 		if (*(str + i) == '\0')
 		{
-			if(words == 0)
+			if (words == 0)
 			{
 				return (NULL);
 			}
