@@ -9,26 +9,50 @@
  */
 char **strtow(char *str)
 {
-	int i = 0, j, there_word, words = 0;
+	int i = 0, j, l, there_word, words = 0;
 	char **ar_2;
 
-	if (str == NULL || str == "")
+	if (str == NULL || *str == '\0')
 		return (NULL);
 
-	while(*str)
+	while(*str !='\0')
 	{
-		there_space = 0;
-		for (*(str + i) == ' '; i++)
-		while (*(str + i) != ' ')
+		j = 0;
+		there_word = 0;
+		for (;*(str + i) == ' '; i++)
+			;
+		if (*(str + i) != ' ' && *(str + i) !='\0')
+		{
+			if (words == 0)
+				ar_2 = malloc(sizeof(char *));
+			else
+				ar_2 = realloc(ar_2, (words + 1) * sizeof(char *));
+			if (ar_2 == NULL)
+			{
+				free(ar_2);
+				return (NULL);
+			}
+		}
+
+		while (*(str + i) != ' ' && *(str + i) !='\0')
 		{
 			there_word = 1;
 			i++;
+			j++;
 		}
-		if (there_word)
+		ar_2 [i] = malloc((j + 1) * sizeof(char));
+		if (ar_2[i] == NULL)
 		{
-			words += 1;
-			there_word = 0;
+			free (ar_2[i]);
+			return (NULL);
 		}
+		for (l = 0; l <= j; l++) 
+		{
+			ar_2[i][l] = *(str + (i - j) + l);
+		}
+		ar_2[i][l] = '\0';
+		if (there_word)
+			words += 1;
 	}
 	return (ar_2);
 }
