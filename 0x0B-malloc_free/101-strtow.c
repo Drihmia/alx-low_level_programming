@@ -29,6 +29,8 @@ char **strtow(char *str)
 			words += 1;
 			there_word = 0;
 		}
-
+	}
+	return (ar_2);
+}
 	
 
