@@ -14,47 +14,47 @@ char **strtow(char *str)
 
 	if (str == NULL || *str == '\0')
 		return (NULL);
-
-	while(*str !='\0')
+	while (*(str + i) != '\0')
 	{
 		j = 0;
 		there_word = 0;
-		for (;*(str + i) == ' '; i++)
-			;
-		if (*(str + i) != ' ' && *(str + i) !='\0')
+		if (*(str + i) != ' ' && *(str + i) != '\0')
 		{
 			if (words == 0)
 				ar_2 = malloc(sizeof(char *));
 			else
-				ar_2 = realloc(ar_2, (words + 1) * sizeof(char *));
+				ar_2 = realloc(ar_2, (words + 2) * sizeof(char *));
 			if (ar_2 == NULL)
 			{
 				free(ar_2);
 				return (NULL);
 			}
 		}
-
-		while (*(str + i) != ' ' && *(str + i) !='\0')
+		while (*(str + i) != ' ' && *(str + i) != '\0')
 		{
 			there_word = 1;
 			i++;
 			j++;
 		}
-		ar_2 [i] = malloc((j + 1) * sizeof(char));
-		if (ar_2[i] == NULL)
+		if (j != 0)
+			ar_2[words] = malloc((j + 1) * sizeof(char));
+		if (ar_2[words] == NULL)
 		{
-			free (ar_2[i]);
+			free(ar_2[words]);
 			return (NULL);
 		}
-		for (l = 0; l <= j; l++) 
+		for (l = 0; l < j && j != 0; l++)
 		{
-			ar_2[i][l] = *(str + (i - j) + l);
+			ar_2[words][l] = *(str + (i - j) + l);
 		}
-		ar_2[i][l] = '\0';
+		if (j != 0)
+			ar_2[words][l] = '\0';
 		if (there_word)
 			words += 1;
+		for (; *(str + i) == ' '; i++)
+			;
+		if (*(str + i) == '\0')
+			break;
 	}
 	return (ar_2);
 }
-	
-
