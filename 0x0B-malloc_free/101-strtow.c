@@ -9,7 +9,7 @@
  */
 char **strtow(char *str)
 {
-	int i = 0, j, l, there_word, words = 0;
+	int i = 0, j, l, k, there_word, words = 0;
 	char **ar_2;
 
 	if (str == NULL || *str == '\0')
@@ -37,10 +37,11 @@ char **strtow(char *str)
 			j++;
 		}
 		if (j != 0)
-			ar_2[words] = malloc((j + 1) * sizeof(char));
+			ar_2[words] = malloc((j + 2) * sizeof(char));
 		if (ar_2[words] == NULL)
 		{
-			free(ar_2[words]);
+			for (k = 0; k < words; k++)
+				free(ar_2[k]);
 			return (NULL);
 		}
 		for (l = 0; l < j && j != 0; l++)
