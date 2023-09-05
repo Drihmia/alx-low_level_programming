@@ -37,7 +37,7 @@ char **strtow(char *str)
 			j++;
 		}
 		if (j != 0)
-			ar_2[words] = malloc((j + 2) * sizeof(char));
+			ar_2[words] = malloc((j + 1) * sizeof(char));
 		if (ar_2[words] == NULL)
 		{
 			for (k = 0; k < words; k++)
@@ -56,10 +56,13 @@ char **strtow(char *str)
 			;
 		if (*(str + i) == '\0')
 		{
-		if(words == 0)
-			return (NULL);
-		else
-			break;
+			if(words == 0)
+			{
+				free(ar_2);
+				return (NULL);
+			}
+			else
+				break;
 		}
 	}
 	return (ar_2);
