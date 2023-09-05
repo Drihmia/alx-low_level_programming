@@ -58,7 +58,6 @@ char **strtow(char *str)
 		{
 			if(words == 0)
 			{
-				free(ar_2);
 				return (NULL);
 			}
 			else
