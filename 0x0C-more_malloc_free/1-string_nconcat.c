@@ -33,7 +33,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (ptr == NULL)
 	{
 		free(ptr);
-		return (NULL);
+		exit(0);
 	}
 
 	l = 0;
