@@ -20,10 +20,12 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 	if (ar == NULL)
 	{
-		free(ar);
 		return (0);
 	}
-	for (i = 0; i < nmemb; i++)
-		ar[i] = 0;
+	if (ar != NULL)
+	{
+		for (i = 0; i < nmemb; i++)
+			ar[i] = 0;
+	}
 	return (ar);
 }
