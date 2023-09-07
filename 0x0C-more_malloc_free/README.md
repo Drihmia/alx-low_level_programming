@@ -7,9 +7,9 @@ Continue of previous project : 0x0B. C - malloc, free
 
 ## man or help:
 
-* exit (3)
-* calloc
-* realloc
+* [exit (3)](https://man7.org/linux/man-pages/man3/exit.3.html)
+* [calloc](https://man7.org/linux/man-pages/man3/calloc.3p.html)
+* [realloc](https://man7.org/linux/man-pages/man3/realloc.3p.html)
 ---
 # Learning Objectives
 
