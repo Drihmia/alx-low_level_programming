@@ -21,6 +21,6 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		free(ar);
 		return (NULL);
 	}
-	memset(ar, 0x00, nmemb);
+	memset(ar, 0x00, nmemb * size);
 	return (ar);
 }
