@@ -39,7 +39,7 @@ char **strtow(char *str)
 		}
 		if (there_word)
 		{
-			ar_2[words] = malloc((j + 1) * sizeof(char));
+			ar_2[words] = malloc((j + 2) * sizeof(char));
 			if (ar_2[words] == NULL)
 			{
 				for (k = 0; k <= words; k++)
