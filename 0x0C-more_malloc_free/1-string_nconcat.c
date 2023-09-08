@@ -12,7 +12,7 @@
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *ptr;
-	unsigned int i, j, l, k, len_1 = 0, len_2 = 0, len;
+	unsigned int i, j, l, len_1 = 0, len_2 = 0, len;
 
 	if (s1 == NULL)
 		s1 = "";
@@ -34,15 +34,13 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 
 	l = 0;
-	k = 0;
 	while (l < len - 1)
 	{
 		if (l < len_1 && *(s1 + l) != '\0')
 			*(ptr + l) = *(s1 + l);
 		else
 		{
-			*(ptr + l) = *(s2 + k);
-			k++;
+			*(ptr + l) = *(s2 + (l - len_1));
 		}
 		l++;
 	}
