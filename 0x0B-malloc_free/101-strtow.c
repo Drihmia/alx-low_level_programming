@@ -71,6 +71,7 @@ char **strtow(char *str)
 	if (tmp == NULL)
 	{
 		free(tmp);
+		free(ar_2);
 		return (NULL);
 	}
 	ar_2 = tmp;
