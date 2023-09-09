@@ -23,7 +23,7 @@ char **strtow(char *str)
 			if (words == 0)
 				tmp = malloc(1 * sizeof(char *));
 			else
-				tmp = realloc(ar_2, (words + 1) * sizeof(char *));
+				tmp = realloc(ar_2, (words + 2) * sizeof(char *));
 			if (tmp == NULL)
 			{
 				free(tmp);
@@ -39,7 +39,7 @@ char **strtow(char *str)
 		}
 		if (there_word)
 		{
-			ar_2[words] = malloc((j + 2) * sizeof(char));
+			ar_2[words] = malloc((j + 1) * sizeof(char));
 			if (ar_2[words] == NULL)
 			{
 				for (k = 0; k <= words; k++)
