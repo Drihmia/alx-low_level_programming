@@ -23,7 +23,7 @@ char **strtow(char *str)
 			if (words == 0)
 				tmp = malloc(1 * sizeof(char *));
 			else
-				tmp = realloc(ar_2, (words + 2) * sizeof(char *));
+				tmp = realloc(ar_2, (words + 1) * sizeof(char *));
 			if (tmp == NULL)
 			{
 				free(tmp);
