@@ -30,6 +30,7 @@ char **strtow(char *str)
 				return (NULL);
 			}
 			ar_2 = tmp;
+			tmp = NULL;
 		}
 		while (*(str + i) != ' ' && *(str + i) != '\0')
 		{
