@@ -66,7 +66,7 @@ char **strtow(char *str)
 				break;
 		}
 	}
-	tmp = realloc(ar_2, (words + 1) * sizeof(char *));
+	tmp = realloc(ar_2, (words + 0) * sizeof(char *));
 	if (tmp == NULL)
 	{
 		free(tmp);
