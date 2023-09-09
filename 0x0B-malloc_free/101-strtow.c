@@ -15,7 +15,7 @@ char **strtow(char *str)
 	if (str == NULL || *str == '\0')
 		return (NULL);
 	while (*(str + i) != '\0')
-	{	
+	{
 		j = 0;
 		there_word = 0;
 		if (*(str + i) != ' ' && *(str + i) != '\0')
@@ -66,7 +66,7 @@ char **strtow(char *str)
 				break;
 		}
 	}
-	tmp = realloc(ar_2, (words + 2) * sizeof(char *));
+	tmp = realloc(ar_2, (words + 1) * sizeof(char *));
 	if (tmp == NULL)
 	{
 		free(tmp);
