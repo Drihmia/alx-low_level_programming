@@ -24,7 +24,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		dog[i].owner = &owner[i];
 		i++;
 	}
-	dog->owner = malloc(sizeof(char)i * i + 1);
+	dog->owner = malloc(sizeof(char) * i + 1);
 	strcpy(dog->owner, owner);
 	while (name[i] != '\0')
 	{
