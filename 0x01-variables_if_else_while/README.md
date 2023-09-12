@@ -1,54 +1,22 @@
-#Resources
-##Read or watch:
+# ** 0x01-variables_if_else_while **
+# [HOME](https://github.com/Drihmia/alx-low_level_programming/blob/main/README.md)
+# [Previous Project](https://github.com/Drihmia/alx-low_level_programming/blob/main/0x00-hello_world/README.md)
+# [Next Project](https://github.com/Drihmia/alx-low_level_programming/blob/main/0x02-functions_nested_loops/README.md)
 
-Everything you need to know to start with C.pdf (You do not have to learn everything in there yet, but make sure you read it entirely first and make sure you understand the slides: “comments”, “Data types | Integer types”, “Declaration”, “Characters”, “Arithmetic operators”, “Variables assignments”, “Comparisons”, “Logical operators”, “if, if…else”, “while loops”.)
-Keywords and identifiers
-integers
-Arithmetic Operators in C
-If statements in C
-if…else statement
-Relational operators
-Logical operators
-while loop in C
-While loop
+## [task 0 : 0-positive_or_negative](https://github.com/Drihmia/alx-low_level_programming/blob/main/0x01-variables_if_else_while/0-positive_or_negative.c)
+## [task 1 : 1-last_digit](https://github.com/Drihmia/alx-low_level_programming/blob/main/0x01-variables_if_else_while/1-last_digit.c)
+## [task 2 : 2-print_alphabet](https://github.com/Drihmia/alx-low_level_programming/blob/main/0x01-variables_if_else_while/2-print_alphabet.c)
+## [task 3 : 3-print_alphabets](https://github.com/Drihmia/alx-low_level_programming/blob/main/0x01-variables_if_else_while/3-print_alphabets.c)
+## [task 4 : 4-print_alphabta](https://github.com/Drihmia/alx-low_level_programming/blob/main/0x01-variables_if_else_while/4-print_alphabt.c)
+## [task 5 : 5-print_numbers](https://github.com/Drihmia/alx-low_level_programming/blob/main/0x01-variables_if_else_while/5-print_numbers.c)
+## [task 6 : 6-print_numberz](https://github.com/Drihmia/alx-low_level_programming/blob/main/0x01-variables_if_else_while/6-print_numberz.c)
+## [task 7 : 7-print_tebahpla](https://github.com/Drihmia/alx-low_level_programming/blob/main/0x01-variables_if_else_while/7-print_tebahpla.c)
+## [task 8 : 8-print_base16](https://github.com/Drihmia/alx-low_level_programming/blob/main/0x01-variables_if_else_while/8-print_base16.c)
+## [task 9 : 9-print_comb](https://github.com/Drihmia/alx-low_level_programming/blob/main/0x01-variables_if_else_while/9-print_comb.c)
+## [task 10 : 100-print_comb3](https://github.com/Drihmia/alx-low_level_programming/blob/main/0x01-variables_if_else_while/100-print_comb3.c)
+## [task 11 : 101-print_comb4](https://github.com/Drihmia/alx-low_level_programming/blob/main/0x01-variables_if_else_while/101-print_comb4.c)
+## [task 12 : 102-print_comb5](https://github.com/Drihmia/alx-low_level_programming/blob/main/0x01-variables_if_else_while/102-print_comb5.c)
 
-##man or help:
-
-ascii (You do not need to learn about scanf, getc, getchar, EOF, EXIT_SUCCESS, time, rand, srand, RAND_MAX, for loops, do...while loops, functions.)
-
-#Learning Objectives
-At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
-
-##General
-What are the arithmetic operators and how to use them
-What are the logical operators (sometimes called boolean operators) and how to use them
-What the the relational operators and how to use them
-What values are considered TRUE and FALSE in C
-What are the boolean operators and how to use them
-How to use the if, if ... else statements
-How to use comments
-How to declare variables of types char, int, unsigned int
-How to assign values to variables
-How to print the values of variables of type char, int, unsigned int with printf
-How to use the while loop
-How to use variables with the while loop
-How to print variables using printf
-What is the ASCII character set
-What are the purpose of the gcc flags -m32 and -m64
-
-##Copyright - Plagiarism
-You are tasked to come up with solutions for the tasks below yourself to meet with the above learning objectives.
-You will not be able to meet the objectives of this or any following project by copying and pasting someone else’s work.
-You are not allowed to publish any content of this project.
-Any form of plagiarism is strictly forbidden and will result in removal from the program.
-
-#Requirements
-
-##General
-Allowed editors: vi, vim, emacs
-All your files will be compiled on Ubuntu 20.04 LTS using gcc, using the options -Wall -Werror -Wextra -pedantic -std=gnu89
-All your files should end with a new line
-A README.md file, at the root of the folder of the project
-There should be no errors and no warnings during compilation
-You are not allowed to use system
-Your code should use the Betty style. It will be checked using betty-style.pl and betty-doc.pl
+# [HOME](https://github.com/Drihmia/alx-low_level_programming/blob/main/README.md)
+# [Previous Project](https://github.com/Drihmia/alx-low_level_programming/blob/main/0x00-hello_world/README.md)
+# [Next Project](https://github.com/Drihmia/alx-low_level_programming/blob/main/0x02-functions_nested_loops/README.md)
