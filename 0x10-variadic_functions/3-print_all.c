@@ -14,8 +14,9 @@
 void print_all(const char * const format, ...)
 {
 	va_list ls;
-	unsigned int i = 0,j = 0;
+	unsigned int i = 0, j = 0;
 	char *str, c;
+
 	while (j < 1 && format == NULL)
 	{
 		exit(EXIT_FAILURE);
@@ -27,7 +28,6 @@ void print_all(const char * const format, ...)
 		c = format[i];
 		if (i != 0 && (c == 'c' || c == 'i' || c == 'f' || c == 's'))
 			printf(", ");
-
 		switch (format[i])
 		{
 			case 'c':
