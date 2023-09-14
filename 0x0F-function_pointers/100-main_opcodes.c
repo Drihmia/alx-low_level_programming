@@ -1,24 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/**
- * print_opcodes - print a non relative numbers in hexadecimal
- * because i am tired and i can't continue, and this task has 100% on its own.
- * @num_bytes: to be printed in opcode.
- * Return: none.
- */
-void print_opcodes(int num_bytes)
-{
-	int var1, var2, i;
-	int diff = &var2 - &var1;
 
-	for (i = 0; i < num_bytes; i++)
-	{
-		printf("%02x ", __FILE__[i]);
-	}
-
-	printf("\n");
-}
 /**
  * main - main function with args from CL.
  * @argc: counter.
@@ -27,7 +10,7 @@ void print_opcodes(int num_bytes)
  */
 int main(int argc, char **argv)
 {
-	int num_bytes;
+	int num_bytes, i;
 
 	if (argc != 2)
 	{
@@ -41,7 +24,13 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		exit(2);
 	}
-	print_opcodes(num_bytes);
+
+	for (i = 0; i < num_bytes; i++)
+	{
+		printf("%02hhx ", *((char *)main + i));
+	}
+
+	printf("\n");
 
 	return (0);
 }
