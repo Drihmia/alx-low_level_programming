@@ -14,7 +14,7 @@ void print_opcodes(int num_bytes)
 
 	for (i = 0; i < num_bytes; i++)
 	{
-		printf("%02x ", *(unsigned char *)(&diff + i));
+		printf("%02x ", __FILE__[i]);
 	}
 
 	printf("\n");
