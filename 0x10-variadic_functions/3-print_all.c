@@ -13,10 +13,10 @@
 void print_all(const char * const format, ...)
 {
 	va_list ls;
-	unsigned int i = 0;
+	int i = 0;
 	char *str, c;
 
-	while (format == NULL)
+	if (format == NULL)
 	{
 		printf("\n");
 		return;
