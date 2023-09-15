@@ -17,7 +17,7 @@ void print_all(const char * const format, ...)
 	char *str, c;
 
 	va_start(ls, format);
-	while (format[i] && format != NULL)
+	while (format[i] && format)
 	{
 		c = format[i];
 		if (i != 0 && (c == 'c' || c == 'i' || c == 'f' || c == 's'))
