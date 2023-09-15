@@ -45,7 +45,7 @@ void print_all(const char * const format, ...)
 				is_there = 0;
 				break;
 		}
-		if(i < (int)(strlen(format) - 1) && is_there == 1)
+		if (i < (int)(strlen(format) - 1) && is_there == 1)
 			printf(", ");
 		i++;
 	}
