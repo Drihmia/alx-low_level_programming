@@ -27,7 +27,9 @@ int main(int argc, char **argv)
 
 	for (i = 0; i < num_bytes; i++)
 	{
-		printf("%02hhx ", *((char *)main + i));
+		printf("%02hhx", *((char *)main + i));
+		if (i < num_bytes - 1)
+			printf(" ");
 	}
 
 	printf("\n");
