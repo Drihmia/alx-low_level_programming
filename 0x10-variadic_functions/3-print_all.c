@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdarg.h>
+#include <string.h>
 
 /**
  * print_all - variadic function that print anything.
@@ -13,8 +14,8 @@
 void print_all(const char * const format, ...)
 {
 	va_list ls;
-	int i = 0;
-	char *str, c;
+	int i = 0, is_there;
+	char *str;
 
 	if (format == NULL)
 	{
@@ -24,9 +25,7 @@ void print_all(const char * const format, ...)
 	va_start(ls, format);
 	while (format[i])
 	{
-		c = format[i];
-		if (i != 0 && (c == 'c' || c == 'i' || c == 'f' || c == 's'))
-			printf(", ");
+		is_there = 1;
 		switch (format[i])
 		{
 			case 'c':
@@ -42,7 +41,12 @@ void print_all(const char * const format, ...)
 				str = va_arg(ls, char *);
 				printf("%s", (str ? str : "(nil)"));
 				break;
+			default:
+				is_there = 0;
+				break;
 		}
+		if(i < (int)(strlen(format) - 1) && is_there == 1)
+			printf(", ");
 		i++;
 	}
 	printf("\n");
