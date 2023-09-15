@@ -20,7 +20,6 @@ void print_all(const char * const format, ...)
 	{
 		printf("\n");
 		return;
-		j++;
 	}
 	va_start(ls, format);
 	while (format[i])
@@ -44,6 +43,8 @@ void print_all(const char * const format, ...)
 				if (str == NULL)
 					str = "(nil)";
 				printf("%s", str);
+				break;
+			default:
 				break;
 		}
 		i++;
