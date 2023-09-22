@@ -1,20 +1,17 @@
 #include "lists.h"
 
 /**
- * list_len - the number of elements in a linked list_t list.
- * @h: pointer to a struct of type list_t.
- * Return:  the number of elements.
+ * free_list - frees a list_t list.
+ * @head: pointer to a struct of type list_t.
+ * Return: None.
  */
-size_t list_len(const list_t *h)
+void free_list(list_t *head)
 {
-	size_t i = 0;
 
-	while (h != NULL)
+	while (head != NULL)
 	{
-		h = h->next;
-		i++;
+		head = head->next;
+		free(head->str);
+		free(head);
 	}
-	return (i);
-}
-
-
+	return;
