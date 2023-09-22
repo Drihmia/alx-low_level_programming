@@ -1,12 +1,10 @@
-section .data
-hello db "Hello, Holberton",10,0  ;
 
 section .text
 global _start
 
 extern printf
 
-_start:
+main:
 mov rdi, format  ;
 mov rsi, hello   ;
 call printf
@@ -17,4 +15,4 @@ syscall
 
 section .data
 format db "%s",0  ;
-
+hello db "Hello, Holberton",10,0  ;
