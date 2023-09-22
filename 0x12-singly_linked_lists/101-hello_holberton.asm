@@ -1,18 +1,21 @@
+       extern	printf		;
 
-section .text
-global _start
+        section .data		;
+msg:	db "Hello, Holberton ", 0	;
+fmt:    db "%s", 10, 0          ;
 
-extern printf
+        section .text           ;
 
-main:
-mov rdi, format  ;
-mov rsi, hello   ;
-call printf
+        global main		;
+main:				;
+        push    rbp		;
+	mov	rdi,fmt
+	mov	rsi,msg
+	mov	rax,0		;
+        call    printf		;
 
-mov rax, 60      ;
-xor rdi, rdi     ;
-syscall
+	pop	rbp		;
 
-section .data
-format db "%s",0  ;
-hello db "Hello, Holberton",10,0  ;
+	mov	rax,0		;
+	ret			;
+
