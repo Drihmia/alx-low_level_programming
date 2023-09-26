@@ -21,12 +21,6 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	if (idx > (unsigned int)last_idx + 1)
 		return (NULL);
 
-	new = malloc(sizeof(listint_t));
-	if (!new)
-		return (NULL);
-
-	new->n = n, new->next = NULL;
-
 	if (idx == 0)
 	{
 		hold = add_nodeint(&(*head), n);
@@ -39,6 +33,12 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	}
 	else
 	{
+		new = malloc(sizeof(listint_t));
+		if (!new)
+			return (NULL);
+
+		new->n = n;
+
 		/* if courant is null*/
 		courant = get_nodeint_at_index(*head, idx);
 		/*mean the function get,didn't find that node-not possible to add*/
