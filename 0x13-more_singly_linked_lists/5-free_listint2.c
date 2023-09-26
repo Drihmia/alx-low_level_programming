@@ -17,7 +17,10 @@ void free_listint2(listint_t **head)
 			free(*head);
 			*head = next;
 			if ((*head)->next == NULL)
+			{
 				free(*head);
+				break;
+			}
 		}
 		*head = NULL;
 	}
