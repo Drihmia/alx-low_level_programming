@@ -15,6 +15,13 @@ listint_t *reverse_listint(listint_t **head)
 	if (!(cur))
 		return (NULL);
 	nex = cur->next;
+	if (!nex)
+	{
+		(*head)->next = NULL;
+		cur->next = (*head);
+		*head = cur;
+		return (*head);
+	}
 	(*head)->next = NULL;
 
 	cur->next = (*head);
