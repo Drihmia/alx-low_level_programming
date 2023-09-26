@@ -13,7 +13,7 @@
 
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	listint_t *courant, *hold, *new, *prev;
+	listint_t *courant, *new, *prev;
 	size_t last_idx;
 
 	last_idx = listint_len(*head) - 1;
@@ -24,17 +24,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		return (NULL);
 	new->n = n;
 	new->next = NULL;
-	if (idx == 0)
-	{
-		hold = add_nodeint(&(*head), n);
-		return (hold);
-	}
-	else if (idx == (unsigned int)last_idx)
-	{
-		hold = add_nodeint_end(&(*head), n);
-		return (hold);
-	}
-	else if (idx == (unsigned int)last_idx + 1)
+	if (idx == (unsigned int)last_idx + 1)
 	{
 		courant = get_nodeint_at_index(*head, idx - 1);
 		courant->next = new;
@@ -48,8 +38,13 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		if (!courant)
 			return (NULL);
 		new->next = courant;
-		prev = get_nodeint_at_index(*head, idx - 1);
-		prev->next = new;
+		if (idx == 0)
+			*head = new;
+		else
+		{
+			prev = get_nodeint_at_index(*head, idx - 1);
+			prev->next = new;
+		}
 		return (new);
 	}
 }
