@@ -16,16 +16,17 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	listint_t *courant, *hold, *new, *prev;
 	size_t last_idx;
 
+	last_idx = listint_len(*head) - 1;
+
+	if (idx > (unsigned int)last_idx)
+		return (NULL);
+
 	new = malloc(sizeof(listint_t));
 	if (!new)
 		return (NULL);
 
 	new->n = n, new->next = NULL;
 
-	last_idx = listint_len(*head) - 1;
-
-	if (idx > (unsigned int)last_idx)
-		return (NULL);
 	if (idx == 0)
 	{
 		hold = add_nodeint(&(*head), n);
