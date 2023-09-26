@@ -22,13 +22,10 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 
 	new->n = n, new->next = NULL;
 
-	if (!(*head))
-	{
-		*head = new;
-		return (*head);
-	}
 	last_idx = listint_len(*head) - 1;
 
+	if (idx > (unsigned int)last_idx)
+		return (NULL);
 	if (idx == 0)
 	{
 		hold = add_nodeint(&(*head), n);
