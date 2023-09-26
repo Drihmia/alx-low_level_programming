@@ -47,7 +47,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		if (!courant)
 			return (NULL);
 
-		new->next = get_nodeint_at_index(*head, idx);
+		new->next = courant;
 		prev = get_nodeint_at_index(*head, idx - 1);
 		prev->next = new;
 
@@ -106,29 +106,4 @@ size_t listint_len(const listint_t *h)
 		return (0);
 	else
 		return (1 + listint_len(h->next));
-}
-
-/**
- * add_nodeint_end - adds a new node at the end of a listint_t list.
- * @head: pointer to pointer of head of signly linked list.
- * @n: value to add as data to each node.
- *
- * Return: the address of the new element, or NULL if it failed.
- */
-
-listint_t *add_nodeint_end(listint_t **head, const int n)
-{
-	if (!(*head))
-	{
-		listint_t *new = malloc(sizeof(listint_t));
-
-		if (!(new))
-			return (NULL);
-		new->n = n;
-		new->next = NULL;
-		*head = new;
-		return (*head);
-	}
-
-	return (add_nodeint_end(&(*head)->next, n));
 }
