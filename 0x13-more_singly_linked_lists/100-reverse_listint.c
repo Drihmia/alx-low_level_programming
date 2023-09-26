@@ -9,6 +9,8 @@ listint_t *reverse_listint(listint_t **head)
 {
 	listint_t *cur, *nex;
 
+	if (!(*head))
+		return (NULL);
 	cur = (*head)->next;
 	nex = cur->next;
 	(*head)->next = NULL;
