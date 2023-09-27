@@ -5,13 +5,13 @@
  * @h: pointer to pointer that represente the her for singly linked list.
  * Return: the size of the list that was free’d.
  */
-size_t free_listint_safe(listint_t **h);
+size_t free_listint_safe(listint_t **h)
 {
 	listint_t *next;
 	size_t i = 0;
 
 	if ((*h) == NULL)
-		return;
+		return (0);
 	while (*h)
 	{
 		next = (*h)->next;
