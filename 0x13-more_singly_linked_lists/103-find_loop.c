@@ -1,7 +1,4 @@
 #include "lists.h"
-listint_t *node_loop(listint_t *h);
-int there_loop(listint_t *head);
-
 
 
 /**
@@ -30,9 +27,7 @@ listint_t *find_listint_loop(listint_t *head)
 			while (cur)
 			{
 				if (((char *)cur - (char *)faster) != 16)
-				{
 					return (faster);
-				}
 				cur = cur->next;
 				faster = faster->next;
 			}
