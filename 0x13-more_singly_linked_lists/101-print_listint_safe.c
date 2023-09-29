@@ -7,26 +7,30 @@
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	size_t i = 0;
+	size_t i = 0, b = 0;
 	listint_t *cur = (void *)head, *marker = NULL, *nex;
 
 	if (!head)
 		exit(98);
 
+	marker = find_listint_loop((void *)head);
 	nex = cur->next;
-	while (cur)
+	while (cur->next)
 	{
-		if (nex != marker)
+		if (cur->next == marker)
+			b++;
+		if (b == 1 || b == 0)
 		{
-		printf("[%p] %d\n", (void *)cur, cur->n);
-		i++;
-		cur->next = marker;
-		cur = nex;
-		nex = cur->next;
+			printf("[%p] %d\n", (void *)cur, cur->n);
+			i++;
+			cur = nex;
+			nex = cur->next;
+
 		}
-		else if (nex == marker)
+		else
 		{
 			printf("-> [%p] %d\n", (void *)cur, cur->n);
+			i++;
 			break;
 		}
 	}
