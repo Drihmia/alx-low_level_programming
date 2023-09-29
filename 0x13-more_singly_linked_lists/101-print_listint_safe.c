@@ -1,5 +1,6 @@
 #include "lists.h"
 int there_loop(listint_t *head);
+listint_t *_find_listint_loop(listint_t *head);
 
 /**
  * print_listint_safe - prints a listint_t linked list (SAFE VERSION).
@@ -16,7 +17,7 @@ size_t print_listint_safe(const listint_t *head)
 
 	if (there_loop((listint_t *)head))
 	{
-		marker = find_listint_loop((void *)head);
+		marker = _find_listint_loop((void *)head);
 		a = 1;
 	}
 	nex = cur->next;
@@ -67,12 +68,12 @@ int there_loop(listint_t *head)
 }
 
 /**
- * find_listint_loop - finds the loop in a linked list.
+ * _find_listint_loop - finds the loop in a linked list.
  * @head: pointer to a header of signly linked list.
  * Return: The address of the node where the loop starts,
  * or NULL if there is no loop.
  */
-listint_t *find_listint_loop(listint_t *head)
+listint_t *_find_listint_loop(listint_t *head)
 {
 	listint_t *cur, *faster;
 
