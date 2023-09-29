@@ -1,4 +1,5 @@
 #include "lists.h"
+int there_loop(listint_t *head);
 
 /**
  * print_listint_safe - prints a listint_t linked list (SAFE VERSION).
@@ -7,17 +8,21 @@
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	size_t i = 0, b = 0;
+	size_t i = 0, b = 0, a = 0;
 	listint_t *cur = (void *)head, *marker = NULL, *nex;
 
 	if (!head)
 		exit(98);
 
-	marker = find_listint_loop((void *)head);
+	if (there_loop((listint_t *)head))
+	{
+		marker = find_listint_loop((void *)head);
+		a = 1;
+	}
 	nex = cur->next;
 	while (cur->next)
 	{
-		if (cur->next == marker)
+		if (cur == marker && a == 1)
 			b++;
 		if (b == 1 || b == 0)
 		{
@@ -25,9 +30,11 @@ size_t print_listint_safe(const listint_t *head)
 			i++;
 			cur = nex;
 			nex = cur->next;
+			if (!nex)
+				printf("[%p] %d\n", (void *)cur, cur->n);
 
 		}
-		else
+		else if (b > 2)
 		{
 			printf("-> [%p] %d\n", (void *)cur, cur->n);
 			i++;
@@ -35,4 +42,26 @@ size_t print_listint_safe(const listint_t *head)
 		}
 	}
 	return (i);
+}
+/**
+ * there_loop - check if there is a loop.
+ * @head: pointer node.
+ * Return: 1 i found, 0 if not.
+ */
+int there_loop(listint_t *head)
+{
+	listint_t *cur, *faster;
+
+	if (!head)
+		return (0);
+	cur = head;
+	faster = head;
+	while (cur && faster && (faster->next))
+	{
+		cur = cur->next;
+		faster = faster->next->next;
+		if (faster == cur)
+			return (1);
+	}
+	return (0);
 }
