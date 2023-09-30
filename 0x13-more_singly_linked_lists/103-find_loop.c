@@ -26,7 +26,7 @@ listint_t *find_listint_loop(listint_t *head)
 			faster = head->next->next;
 			while (cur)
 			{
-				if (((char *)cur - (char *)faster) != 16)
+				if (((char *)cur - (char *)faster) != 12)
 					return (faster);
 				cur = cur->next;
 				faster = faster->next;
