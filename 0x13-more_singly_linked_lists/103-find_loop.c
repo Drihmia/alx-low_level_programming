@@ -11,7 +11,7 @@ listint_t *find_listint_loop(listint_t *head)
 {
 	listint_t *cur, *faster;
 
-	if (!head || !(head->next))
+	if (!head)
 		return (NULL);
 
 	cur = head;
