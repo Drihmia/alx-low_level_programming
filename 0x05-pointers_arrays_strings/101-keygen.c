@@ -27,6 +27,7 @@ int main(void)
 			}
 		}
 	}
+	str[i] = '\0';
 	printf("%s", str);
-		return (sum);
+	return (0);
 }
