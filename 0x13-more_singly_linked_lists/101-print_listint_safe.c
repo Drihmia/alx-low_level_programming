@@ -29,9 +29,9 @@ size_t print_listint_safe(const listint_t *head)
 			printf("[%p] %d\n", (void *)cur, cur->n), i++;
 			cur = cur->next;
 		}
-		else if (b > 2)
+		else if (b == 2)
 		{
-			printf("-> [%p] %d\n", (void *)cur, cur->n), i++;
+			printf("-> [%p] %d\n", (void *)cur, cur->n);
 			break;
 		}
 	}
