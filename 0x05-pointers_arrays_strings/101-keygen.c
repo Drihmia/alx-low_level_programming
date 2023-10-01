@@ -2,9 +2,11 @@
 #include <stdlib.h>
 #include <time.h>
 
-int main (void)
+
+int main(void)
 {
-	int ref = 2772, sum = 0, holder;
+	int ref = 2772, sum = 0, holder, i = 0;
+	char str[100];
 
 	srand(time(NULL));
 	while (sum != ref)
@@ -12,11 +14,19 @@ int main (void)
 		holder = rand() % 128;
 		if (holder >= 40 && holder <= 128)
 		{
-		if (sum > ref)
-			sum -= holder;
-		else if (sum < ref)
-			sum += holder;
+			if (sum < ref)
+			{
+				sum += holder;
+				str[i] = holder;
+				i++;
+			}
+			else if (sum > ref)
+			{
+				sum -= holder;
+				i--;
+			}
 		}
 	}
-	return (sum);
+	printf("%s", str);
+		return (sum);
 }
