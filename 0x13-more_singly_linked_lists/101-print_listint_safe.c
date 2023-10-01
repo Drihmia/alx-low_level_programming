@@ -10,7 +10,7 @@ listint_t *_find_listint_loop(listint_t *head);
 size_t print_listint_safe(const listint_t *head)
 {
 	size_t i = 0, b = 0, a = 0;
-	listint_t *cur = (void *)head, *marker = NULL, *nex;
+	listint_t *cur = (void *)head, *marker = NULL;
 
 	if (!head)
 		exit(98);
@@ -27,9 +27,7 @@ size_t print_listint_safe(const listint_t *head)
 		if (b == 1 || b == 0)
 		{
 			printf("[%p] %d\n", (void *)cur, cur->n), i++;
-			nex = cur->next;
-			cur = nex;
-
+			cur = cur->next;
 		}
 		else if (b > 2)
 		{
