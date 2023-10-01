@@ -20,7 +20,6 @@ size_t print_listint_safe(const listint_t *head)
 		marker = _find_listint_loop((void *)head);
 		a = 1;
 	}
-	nex = cur->next;
 	while (cur)
 	{
 		if (cur == marker && a == 1)
@@ -28,13 +27,8 @@ size_t print_listint_safe(const listint_t *head)
 		if (b == 1 || b == 0)
 		{
 			printf("[%p] %d\n", (void *)cur, cur->n), i++;
-			cur = nex;
 			nex = cur->next;
-			if (!nex)
-			{
-				printf("[%p] %d\n", (void *)cur, cur->n), i++;
-				break;
-			}
+			cur = nex;
 
 		}
 		else if (b > 2)
