@@ -13,7 +13,7 @@ size_t print_listint_safe(const listint_t *head)
 	listint_t *cur = (void *)head, *marker = NULL;
 
 	if (!head)
-		exit(98);
+		return (0);
 
 	if (there_loop((listint_t *)head))
 	{
