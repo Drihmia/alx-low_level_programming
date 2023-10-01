@@ -22,15 +22,13 @@ listint_t *find_listint_loop(listint_t *head)
 		faster = faster->next->next;
 		if (faster == cur)
 		{
-			cur = head->next;
-			faster = head->next->next;
-			while (cur)
+			cur = head;
+			while (cur != faster)
 			{
-				if (((char *)cur - (char *)faster) != 16)
-					return (faster);
 				cur = cur->next;
 				faster = faster->next;
 			}
+			return (cur);
 		}
 	}
 	return (NULL);
