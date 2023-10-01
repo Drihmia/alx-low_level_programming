@@ -27,8 +27,7 @@ size_t print_listint_safe(const listint_t *head)
 			b++;
 		if (b == 1 || b == 0)
 		{
-			printf("[%p] %d\n", (void *)cur, cur->n);
-			i++;
+			printf("[%p] %d\n", (void *)cur, cur->n), i++;
 			cur = nex;
 			nex = cur->next;
 			if (!nex)
@@ -40,8 +39,7 @@ size_t print_listint_safe(const listint_t *head)
 		}
 		else if (b > 2)
 		{
-			printf("-> [%p] %d\n", (void *)cur, cur->n);
-			i++;
+			printf("-> [%p] %d\n", (void *)cur, cur->n), i++;
 			break;
 		}
 	}
@@ -80,7 +78,7 @@ listint_t *_find_listint_loop(listint_t *head)
 {
 	listint_t *cur, *faster;
 
-	if (!head || !(head->next))
+	if (!head)
 		return (NULL);
 
 	cur = head;
@@ -91,15 +89,13 @@ listint_t *_find_listint_loop(listint_t *head)
 		faster = faster->next->next;
 		if (faster == cur)
 		{
-			cur = head->next;
-			faster = head->next->next;
-			while (cur)
+			cur = head;
+			while (cur != faster)
 			{
-				if (((char *)cur - (char *)faster) != 16)
-					return (faster);
 				cur = cur->next;
 				faster = faster->next;
 			}
+			return (cur);
 		}
 	}
 	return (NULL);
