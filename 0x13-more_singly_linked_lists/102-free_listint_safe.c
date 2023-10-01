@@ -24,20 +24,13 @@ size_t free_listint_safe(listint_t **h)
 			b++;
 		if (b == 1 && (*h)->next == marker)
 			c = 1;
-		if (!c)
-		{
-			next = (*h)->next;
-			free(*h);
-			*h = next;
-			i++;
-		}
-		else
-		{
-			next = (*h)->next;
-			free(*h);
-			*h = next, i++;
+
+		next = (*h)->next;
+		free(*h);
+		*h = next;
+		i++;
+		if (c)
 			break;
-		}
 	}
 	(*h) = NULL;
 	return (i);
