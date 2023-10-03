@@ -24,7 +24,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (fhandl == -1)
 		return (0);
 
-	if ( leeters)
+	if (letters)
 	{
 		ret_read = read(fhandl, buf, letters);
 		if (ret_read == -1)
