@@ -15,34 +15,40 @@ ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fhandl = 0;
 	ssize_t ret_read = 0, ret_close = 0, ret_write = 0;
-	char buf[1024];
+	char *buf = malloc(sizeof(char) * letters);
 
-	if (filename == NULL)
+
+	if (filename == NULL || buf == NULL)
 		return (0);
-
 	fhandl = open(filename, O_RDONLY);
 	if (fhandl == -1)
+	{
+		free(buf);
 		return (0);
-
+	}
 	if (letters)
 	{
 		ret_read = read(fhandl, buf, letters);
 		if (ret_read == -1)
 		{
+			free(buf);
 			return (0);
 		}
+
 		buf[ret_read] = '\0';
 
 		ret_write = write(STDOUT_FILENO, buf, strlen(buf));
 		if (ret_write == -1)
 		{
+			free(buf);
 			return (0);
 		}
-
 	}
 	ret_close = close(fhandl);
 	if (ret_close == -1)
+	{
+		free(buf);
 		return (0);
+	}
 	return (ret_read);
-
 }
