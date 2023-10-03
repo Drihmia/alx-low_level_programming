@@ -1,7 +1,7 @@
 #include "main.h"
 
 
-void displayElfHeaderInfo(const ElfHeader *header)
+void displayElfHeaderInfo(const struct ElfHeader *header)
 {
 	printf("Magic:   0x7FELF\n");
 	printf("Class:   %s\n", header->e_ident[4] == 1 ? "32-bit" : "64-bit");
