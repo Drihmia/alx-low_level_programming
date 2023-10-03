@@ -23,7 +23,7 @@ int main(int ac, char **ag)
 	fd_to = open(ag[2], O_RDWR | O_CREAT | O_TRUNC, 0664);
 	if (fd_to == -1)
 	{
-		if (open(ar[2], O_RDONLY == -1)
+		if (open(ag[2], O_RDONLY == -1))
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", ag[1]), exit(98);
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", ag[2]);
 		if (close(fd_fro) == -1)
