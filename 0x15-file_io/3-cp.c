@@ -24,7 +24,7 @@ int main(int ac, char **ag)
 	if (fd_to == -1)
 	{
 		if (open(ag[2], O_RDONLY) == -1)
-			;
+			exit(0);
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", ag[2]);
 		if (close(fd_fro) == -1)
 			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_fro), exit(100);
