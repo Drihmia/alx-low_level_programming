@@ -15,7 +15,7 @@ int main(int ac, char **ag)
 
 	if (ac != 3)
 	{
-		dprintf(2, "Usage: %s %s %s\n", ag[0], ag[1], ag[2]);
+		dprintf(STDERR_FILENO, "Usage: %s %s %s\n", ag[0], ag[1], ag[2]);
 		exit(97);
 	}
 	if (ag[1] == NULL || ag[2] == NULL)
