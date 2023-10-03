@@ -19,7 +19,7 @@ typedef struct
 int main(int argc, char *argv[])
 {
 	const char *elf_filename;
-	FILE *file = fopen(elf_filename, "rb");
+	FILE *file;
 	ElfHeader header;
 
 	if (argc != 2)
@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 	}
 
 	elf_filename = argv[1];
-
+	file = fopen(elf_filename, "rb");
 	if (file == NULL)
 	{
 		perror("Error opening file");
