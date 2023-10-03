@@ -10,7 +10,7 @@
 int main(int ac, char **ag)
 {
 	int fd_to = 0, fhandls_fr = 0;
-	char buf[1024];
+	char buf[100000];
 	ssize_t ret_read = 0, ret_write = 0;
 
 	if (ac != 3)
