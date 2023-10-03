@@ -18,7 +18,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	char buf[1025];
 
 	if (filename == NULL)
-		return (-1);
+		return (0);
 
 	fhandl = open(filename, O_RDONLY);
 	if (fhandl == -1)
@@ -38,6 +38,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	ret_close = close(fhandl);
 	if (ret_close == -1)
 		return (0);
-	return (ret_read + 1);
+	return (ret_read);
 
 }
