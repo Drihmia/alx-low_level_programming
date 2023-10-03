@@ -20,11 +20,11 @@ int main(int ac, char **ag)
 	fd_fro = open(ag[1], O_RDONLY);
 	if (fd_fro == -1)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", ag[1]), exit(98);
+	if (open(ag[2], O_RDONLY == -1))
+		return (0);
 	fd_to = open(ag[2], O_RDWR | O_CREAT | O_TRUNC, 0664);
 	if (fd_to == -1)
 	{
-		if (open(ag[2], O_RDONLY == -1))
-			return (0);
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", ag[2]);
 		if (close(fd_fro) == -1)
 			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_fro), exit(100);
