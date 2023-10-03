@@ -1,5 +1,4 @@
 #include "main.h"
-#include <args.h>
 
 /**
  * main - take two aeguments, and copy 1st into the 2nd one.
