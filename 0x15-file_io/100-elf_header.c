@@ -1,64 +1,72 @@
 #include <stdio.h>
-#include <stdint.h>
 #include <stdlib.h>
+#include <unistd.h>
+#include <fcntl.h>
 
-typedef struct
-{
-	uint8_t  e_ident[16];
-	uint16_t e_type;
-	uint16_t e_machine;
-	uint32_t e_version;
-	uint8_t  e_osabi;
-	uint8_t  e_abiversion;
-	uint8_t  e_pad[7];
-	uint16_t e_type2;
+struct ElfHeader {
+	unsigned char e_ident[16];
+	unsigned short e_type;
+	unsigned short e_machine;
+	unsigned long e_version;
+	unsigned char e_osabi;
+	unsigned char e_abiversion;
+	unsigned char e_pad[7];
+	unsigned short e_type2;
+	unsigned long e_entry;
+};
 
-	uint64_t e_entry;
-} ElfHeader;
+typedef struct ElfHeader ElfHeader;
 
-int main(int argc, char *argv[])
-{
+void displayElfHeaderInfo(const ElfHeader *header) {
+	printf("Magic:   0x7FELF\n");
+	printf("Class:   %s\n", header->e_ident[4] == 1 ? "32-bit" : "64-bit");
+	printf("Data:    %s\n", header->e_ident[5] == 1 ? "Little-endian" : "Big-endian");
+	printf("Version: %lu (current)\n", header->e_version);
+	printf("OS/ABI:  %u\n", header->e_osabi);
+	printf("ABI Version: %u\n", header->e_abiversion);
+	printf("Type:    %u (EXEC)\n", header->e_type);
+	printf("Entry point address: 0x%lx\n", header->e_entry);
+}
+
+int main(int argc, char *argv[]) {
 	const char *elf_filename;
-	FILE *file;
+	int fd;
 	ElfHeader header;
+	ssize_t bytes_read;
 
-	if (argc != 2)
-	{
-		printf("Usage: %s elf_filename\n", argv[0]);
-		return (1);
+	if (argc != 2) {
+		fprintf(stderr, "Usage: %s elf_filename\n", argv[0]);
+		exit(98);
 	}
 
 	elf_filename = argv[1];
-	file = fopen(elf_filename, "rb");
-	if (file == NULL)
-	{
+	fd = open(elf_filename, O_RDONLY);
+
+	if (fd == -1) {
 		perror("Error opening file");
-		return (1);
+		exit(98);
 	}
 
-	fread(&header, sizeof(ElfHeader), 1, file);
+	bytes_read = read(fd, &header, sizeof(ElfHeader));
+
+	if (bytes_read == -1) {
+		perror("Error reading file");
+		close(fd);
+		exit(98);
+	}
 
 	if (header.e_ident[0] != 0x7F ||
 			header.e_ident[1] != 'E' ||
 			header.e_ident[2] != 'L' ||
-			header.e_ident[3] != 'F')
-	{
-		printf("Not a valid ELF file.\n");
-		fclose(file);
-		return (1);
+			header.e_ident[3] != 'F') {
+		fprintf(stderr, "Not a valid ELF file: %s\n", elf_filename);
+		close(fd);
+		exit(98);
 	}
 
-	printf("Magic:   0x7FELF\n");
-	printf("Class:   %s\n", header.e_ident[4] == 1 ? "32-bit" : "64-bit");
-	printf("Data:    %s\n", header.e_ident[5] == 1 ? "Little-endian" : "Big-endian");
-	printf("Version: %u\n", (unsigned int)header.e_version);
-	printf("OS/ABI:  %d\n", (int)header.e_osabi);
-	printf("ABI Version: %d\n", (int)header.e_abiversion);
-	printf("Type:    %d\n", (int)header.e_type);
-	printf("Entry point address: 0x%lx\n", (unsigned long)header.e_entry);
+	displayElfHeaderInfo(&header);
 
-	fclose(file);
-
-	return (0);
+	close(fd);
+	exit(0);
 }
 
