@@ -28,12 +28,19 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	{
 		ret_read = read(fhandl, buf, letters);
 		if (ret_read == -1)
+		{
+			close(fhandl);
 			return (0);
+		}
 		buf[ret_read] = '\0';
 
 		ret_write = write(1, buf, strlen(buf));
 		if (ret_write == -1 || ret_read != ret_write)
+		{
+			close(fhandl);
 			return (0);
+		}
+
 	}
 	ret_close = close(fhandl);
 	if (ret_close == -1)
