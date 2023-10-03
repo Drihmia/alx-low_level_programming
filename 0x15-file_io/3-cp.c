@@ -21,11 +21,11 @@ int main(int ac, char **ag)
 		return (-1);
 	fd_fro = open(ag[1], O_RDONLY);
 	if (fd_fro == -1)
-		dprintf(STDERR_FILENO, "Error: Can't open from %s\n", ag[1]), exit(98);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", ag[1]), exit(98);
 	fd_to = open(ag[2], O_RDWR | O_CREAT | O_TRUNC, 0664);
 	if (fd_to == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't open to %s\n", ag[2]), exit(99);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", ag[2]), exit(99);
 		if (close(fd_fro) == -1)
 			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_fro), exit(100); }
 	while ((ret_read = read(fd_fro, buf, sizeof(buf))) > 0)
