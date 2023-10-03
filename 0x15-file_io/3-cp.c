@@ -10,12 +10,12 @@
 int main(int ac, char **ag)
 {
 	int fd_to = 0, fhandls_fr = 0;
-	char buf[100000];
+	char buf[1024];
 	ssize_t ret_read = 0, ret_write = 0;
 
 	if (ac != 3)
 	{
-		dprintf(STDERR_FILENO, "Usage: %s %s %s\n", ag[0], ag[1], ag[2]);
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97); }
 	if (ag[1] == NULL || ag[2] == NULL)
 		return (-1);
