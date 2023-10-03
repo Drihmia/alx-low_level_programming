@@ -15,8 +15,10 @@ int main(int ac, char **ag)
 
 	if (ac != 3)
 	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "Usage: %s %s %s\n", ag[0], ag[1], ag[2]);
 		exit(97); }
+	if (ag[1] == NULL || ag[2] == NULL)
+		return (-1);
 	fhandls_fr = open(ag[1], O_RDONLY);
 	if (fhandls_fr == -1)
 		dprintf(STDERR_FILENO, "Error: Can't read from %s\n", ag[1]), exit(98);
