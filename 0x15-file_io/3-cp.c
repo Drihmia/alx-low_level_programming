@@ -40,4 +40,5 @@ int main(int ac, char **ag)
 
 	if (close(fhandl_to) == -1)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fhandl_to), exit(100);
+	return (0);
 }
