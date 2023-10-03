@@ -3,14 +3,52 @@
 
 void displayElfHeaderInfo(const struct ElfHeader *header)
 {
-	printf("Magic:   0x7FELF\n");
-	printf("Class:   %s\n", header->e_ident[4] == 1 ? "32-bit" : "64-bit");
-	printf("Data:    %s\n", header->e_ident[5] == 1 ? "Little-endian" : "Big-endian");
-	printf("Version: %lu (current)\n", header->e_version);
-	printf("OS/ABI:  %u\n", header->e_osabi);
-	printf("ABI Version: %u\n", header->e_abiversion);
-	printf("Type:    %u (EXEC)\n", header->e_type);
-	printf("Entry point address: 0x%lx\n", header->e_entry);
+	int i;
+	const char *osabi_description;
+	const char *type_description;
+
+
+	printf("ELF Header:\n");
+	printf("  Magic:   ");
+	for (i = 0; i < 16; i++)
+	{
+		printf("%02x ", header->e_ident[i]);
+	}
+	printf("\n");
+	printf("  Class:   %s\n", header->e_ident[4] == 1 ? "ELF32" : "ELF64");
+	printf("  Data:    %s\n", header->e_ident[5] == 1 ? "2's complement, little endian" : "2's complement, Big-endian");
+	printf("  Version: %-28lu (current)\n", header->e_version);
+
+	switch (header->e_osabi)
+	{
+		case 0:
+			osabi_description = "UNIX - System V";
+			break;
+		case 1:
+			osabi_description = "HP-UX";
+			break;
+		default:
+			osabi_description = "Unknown";
+	}
+
+	switch (header->e_type)
+	{
+		case 0:
+			type_description = "No file type";
+			break;
+		case 1:
+			type_description = "Relocatable file";
+			break;
+		case 2:
+			type_description = "EXEC (Executable file)";
+			break;
+		default:
+			type_description = "Unknown";
+	}
+	printf("  OS/ABI:  %s\n", osabi_description);
+	printf("  ABI Version: %u\n", header->e_abiversion);
+	printf("  Type:    %s (EXEC)\n", type_description);
+	printf("  Entry point address: 0x%lx\n", header->e_entry);
 }
 
 int main(int argc, char *argv[])
