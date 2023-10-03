@@ -38,6 +38,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	ret_close = close(fhandl);
 	if (ret_close == -1)
 		return (0);
-	return (ret_read);
+	return (ret_read + 1);
 
 }
