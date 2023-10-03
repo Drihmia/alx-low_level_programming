@@ -29,7 +29,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		ret_read = read(fhandl, buf, letters);
 		if (ret_read == -1)
 		{
-			close(fhandl);
 			return (0);
 		}
 		buf[ret_read] = '\0';
@@ -37,7 +36,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		ret_write = write(STDOUT_FILENO, buf, strlen(buf));
 		if (ret_write == -1)
 		{
-			close(fhandl);
 			return (0);
 		}
 
