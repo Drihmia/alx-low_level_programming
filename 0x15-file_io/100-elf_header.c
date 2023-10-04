@@ -1,11 +1,17 @@
 #include "main.h"
 
+/**
+ * displayElfHeaderInfo - as it calls
+ * @header: pointer to struct.
+ * Return: None.
+ */
 
 void displayElfHeaderInfo(const struct ElfHeader *header)
 {
 	int i;
 	const char *osabi_description;
 	const char *type_description;
+	char *endian, *end_li, *end_big;
 
 
 	printf("ELF Header:\n");
@@ -16,7 +22,10 @@ void displayElfHeaderInfo(const struct ElfHeader *header)
 	}
 	printf("\n");
 	printf("  Class:   %s\n", header->e_ident[4] == 1 ? "ELF32" : "ELF64");
-	printf("  Data:    %s\n", header->e_ident[5] == 1 ? "2's complement, little endian" : "2's complement, Big-endian");
+	end_li = "2's complement, little endian";
+	end_big = "2's complement, Big-endian";
+	endian = header->e_ident[5] == 1 ? end_li : end_big;
+	printf("  Data:    %s\n", endian);
 	printf("  Version: %-28lu (current)\n", header->e_version);
 
 	switch (header->e_osabi)
