@@ -71,7 +71,7 @@ void printOSABI(u_int8_t struct_e_osabi)
 			osabi_description = "UNIX - NetBSD";
 			break;
 		case ELFOSABI_LINUX:
-			osabi_description = "UNIX - GNU";
+			osabi_description = "UNIX - Linux";
 			break;
 		case ELFOSABI_SOLARIS:
 			osabi_description = "UNIX - Solaris";
@@ -89,10 +89,10 @@ void printOSABI(u_int8_t struct_e_osabi)
 			osabi_description = "ARM architecture";
 			break;
 		case ELFOSABI_STANDALONE:
-			osabi_description = "Stand-alone (embedded)";
+			osabi_description = "Stand-alone (embedded) ABI";
 			break;
 		default:
-			osabi_description = "<unknown: 53>";
+			osabi_description = "Unknown";
 	}
 
 	printf("  OS/ABI:                            %s\n", osabi_description);
