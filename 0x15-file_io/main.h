@@ -7,6 +7,18 @@
 #include <unistd.h>
 #include <fcntl.h>
 
+#define ELFOSABI_NONE       0
+#define ELFOSABI_SYSV       0
+#define ELFOSABI_HPUX       1
+#define ELFOSABI_NETBSD     2
+#define ELFOSABI_LINUX      3
+#define ELFOSABI_SOLARIS    6
+#define ELFOSABI_IRIX       8
+#define ELFOSABI_FREEBSD    9
+#define ELFOSABI_TRU64      10
+#define ELFOSABI_ARM        97
+#define ELFOSABI_STANDALONE 255
+
 /**
  * struct ElfHeader - ELF header structure
  * @e_ident: ELF identification
@@ -34,10 +46,10 @@ struct ElfHeader
 	unsigned short e_type2;
 	unsigned long e_entry;
 };
-void displayElfHeaderInfo(const struct ElfHeader *header);
-
-
 typedef struct ElfHeader ElfHeader;
+void displayElfHeaderInfo(const struct ElfHeader *header);
+void printOSABI(u_int8_t struct_e_osabi);
+
 ssize_t read_textfile(const char *filename, size_t letters);
 int create_file(const char *filename, char *text_content);
 int append_text_to_file(const char *filename, char *text_content);
