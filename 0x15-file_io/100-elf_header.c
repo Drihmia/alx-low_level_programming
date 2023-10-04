@@ -47,7 +47,8 @@ void displayElfHeaderInfo(const struct ElfHeader *header)
 	printOSABI(header->e_type);
 	printf("  ABI Version:                       %u\n", header->e_abiversion);
 	printf("  Type:                              %s\n", type_description);
-	printf("  Entry point address:               0x%lx\n", header->e_entry);
+	printf("  Entry point address:               0x%x\n",
+			(unsigned int)header->e_entry);
 }
 /**
  * printOSABI - as the name says.
