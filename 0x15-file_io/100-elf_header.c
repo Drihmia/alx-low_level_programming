@@ -126,7 +126,7 @@ int main(int argc, char *argv[])
 			header.e_ident[2] != 'L' ||
 			header.e_ident[3] != 'F')
 	{
-		fprintf(stderr, "Not a valid ELF file: %s\n", elf_filename);
+		fprintf(stderr, "readelf: Error: Not an ELF file - it has the wrong magic bytes at the start\n");
 		close(fd);
 		exit(98);
 	}
