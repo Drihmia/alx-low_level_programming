@@ -14,10 +14,10 @@ void displayElfHeaderInfo(const struct ElfHeader *header)
 
 
 	printf("ELF Header:\n");
-	printf("  Magic:   ");
+	printf("  Magic:  ");
 	for (i = 0; i < 16; i++)
 	{
-		printf("%02x ", header->e_ident[i]);
+		printf(" %02x", header->e_ident[i]);
 	}
 	printf("\n");
 	ELF_class = header->e_ident[4] == 1 ? "ELF32" : "ELF64";
@@ -60,7 +60,7 @@ void printOSABI(u_int8_t struct_e_osabi)
 
 	switch (struct_e_osabi)
 	{
-		case ELFOSABI_NONE:
+		case ELFOSABI_SYSV:
 			osabi_description = "UNIX - System V";
 			break;
 		case ELFOSABI_HPUX:
