@@ -47,7 +47,7 @@ void displayElfHeaderInfo(const struct ElfHeader *header)
 	printOSABI(header->e_type);
 	printf("  ABI Version:                       %u\n", header->e_abiversion);
 	printf("  Type:                              %s\n", type_description);
-	printf("  Entry point address:               0x%x\n",
+	printf("  Entry point address:               0x%lx\n",
 			header->e_entry);
 }
 /**
@@ -71,7 +71,7 @@ void printOSABI(u_int8_t struct_e_osabi)
 			osabi_description = "UNIX - NetBSD";
 			break;
 		case ELFOSABI_LINUX:
-			osabi_description = "UNIX - Linux";
+			osabi_description = "UNIX - GNU";
 			break;
 		case ELFOSABI_SOLARIS:
 			osabi_description = "UNIX - Solaris";
@@ -89,10 +89,10 @@ void printOSABI(u_int8_t struct_e_osabi)
 			osabi_description = "ARM architecture";
 			break;
 		case ELFOSABI_STANDALONE:
-			osabi_description = "Stand-alone (embedded) ABI";
+			osabi_description = "Stand-alone (embedded)";
 			break;
 		default:
-			osabi_description = "Unknown";
+			osabi_description = "<unknown: 53>";
 	}
 
 	printf("  OS/ABI:                            %s\n", osabi_description);
