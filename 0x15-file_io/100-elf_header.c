@@ -9,7 +9,6 @@
 void displayElfHeaderInfo(const struct ElfHeader *header)
 {
 	int i;
-	const char *osabi_description;
 	const char *type_description;
 	char *endian, *end_li, *end_big;
 
@@ -27,19 +26,6 @@ void displayElfHeaderInfo(const struct ElfHeader *header)
 	endian = header->e_ident[5] == 1 ? end_li : end_big;
 	printf("  Data:    %s\n", endian);
 	printf("  Version: %-28lu (current)\n", header->e_version);
-
-	switch (header->e_osabi)
-	{
-		case 0:
-			osabi_description = "UNIX - System V";
-			break;
-		case 1:
-			osabi_description = "HP-UX";
-			break;
-		default:
-			osabi_description = "Unknown";
-	}
-
 	switch (header->e_type)
 	{
 		case 0:
@@ -52,13 +38,59 @@ void displayElfHeaderInfo(const struct ElfHeader *header)
 			type_description = "EXEC (Executable file)";
 			break;
 		default:
-			type_description = "<unknown: 53>";
+			type_description = "Unknown";
 	}
-	printf("  OS/ABI:  %s\n", osabi_description);
+
+
+	printOSABI(header->e_type);
 	printf("  ABI Version: %u\n", header->e_abiversion);
 	printf("  Type:    %s (EXEC)\n", type_description);
 	printf("  Entry point address: 0x%lx\n", header->e_entry);
 }
+
+void printOSABI(u_int8_t struct_e_osabi)
+{
+	const char *osabi_description;
+
+	switch (struct_e_osabi)
+	{
+		case ELFOSABI_NONE:
+			osabi_description = "UNIX System V ABI";
+			break;
+		case ELFOSABI_HPUX:
+			osabi_description = "HP-UX ABI";
+			break;
+		case ELFOSABI_NETBSD:
+			osabi_description = "NetBSD ABI";
+			break;
+		case ELFOSABI_LINUX:
+			osabi_description = "Linux ABI";
+			break;
+		case ELFOSABI_SOLARIS:
+			osabi_description = "Solaris ABI";
+			break;
+		case ELFOSABI_IRIX:
+			osabi_description = "IRIX ABI";
+			break;
+		case ELFOSABI_FREEBSD:
+			osabi_description = "FreeBSD ABI";
+			break;
+		case ELFOSABI_TRU64:
+			osabi_description = "TRU64 UNIX ABI";
+			break;
+		case ELFOSABI_ARM:
+			osabi_description = "ARM architecture ABI";
+			break;
+		case ELFOSABI_STANDALONE:
+			osabi_description = "Stand-alone (embedded) ABI";
+			break;
+		default:
+			osabi_description = "Unknown";
+	}
+
+	printf("  OS/ABI:  %s\n", osabi_description);
+}
+
 
 int main(int argc, char *argv[])
 {
@@ -99,11 +131,11 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 	offset = lseek(bytes_read, 0, SEEK_SET);
-		if (offset < 0)
-		{
-			close (fd);
-			exit (98);
-		}
+	if (offset > 0)
+	{
+		close(fd);
+		exit(98);
+	}
 	displayElfHeaderInfo(&header);
 
 	close(fd);
