@@ -31,7 +31,7 @@ int main(int ac, char **ag)
 		ret_write = write(fd_to, buf, ret_read);
 		if (ret_write == -1)
 		{
-			dprintf(2, "Error: Can't write to %s\n", ag[2]), exit(99);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", ag[2]), exit(99);
 			if (close(fd_fro) == -1)
 				dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_fro), exit(100);
 			if (close(fd_to) == -1)
