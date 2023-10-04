@@ -10,7 +10,7 @@ void displayElfHeaderInfo(const struct ElfHeader *header)
 {
 	int i;
 	const char *type_description;
-	char *endian, *end_li, *end_big;
+	char *endian, *end_li, *end_big, *ELF_class;
 
 
 	printf("ELF Header:\n");
@@ -20,12 +20,14 @@ void displayElfHeaderInfo(const struct ElfHeader *header)
 		printf("%02x ", header->e_ident[i]);
 	}
 	printf("\n");
-	printf("  Class:   %s\n", header->e_ident[4] == 1 ? "ELF32" : "ELF64");
+	ELF_class = header->e_ident[4] == 1 ? "ELF32" : "ELF64";
+	printf("  Class:                             %s\n", ELF_class);
 	end_li = "2's complement, little endian";
 	end_big = "2's complement, Big-endian";
 	endian = header->e_ident[5] == 1 ? end_li : end_big;
-	printf("  Data:    %s\n", endian);
-	printf("  Version: %-28lu (current)\n", header->e_version);
+	printf("  Data:                              %s\n", endian);
+	printf("  Version:                           %lu (current)\n",
+			header->e_version);
 	switch (header->e_type)
 	{
 		case 0:
@@ -43,11 +45,15 @@ void displayElfHeaderInfo(const struct ElfHeader *header)
 
 
 	printOSABI(header->e_type);
-	printf("  ABI Version: %u\n", header->e_abiversion);
-	printf("  Type:    %s (EXEC)\n", type_description);
-	printf("  Entry point address: 0x%lx\n", header->e_entry);
+	printf("  ABI Version:                       %u\n", header->e_abiversion);
+	printf("  Type:                              %s\n", type_description);
+	printf("  Entry point address:               0x%lx\n", header->e_entry);
 }
-
+/**
+ * printOSABI - as the name says.
+ * @struct_e_osabi: the struct variable.
+ * Return. NONE
+ */
 void printOSABI(u_int8_t struct_e_osabi)
 {
 	const char *osabi_description;
@@ -88,10 +94,15 @@ void printOSABI(u_int8_t struct_e_osabi)
 			osabi_description = "Unknown";
 	}
 
-	printf("  OS/ABI:  %s\n", osabi_description);
+	printf("  OS/ABI:                            %s\n", osabi_description);
 }
 
-
+/**
+ * main - entry point.
+ * @argc: counter.
+ * @argv: double pointer.
+ * Return: integer.
+ */
 int main(int argc, char *argv[])
 {
 	const char *elf_filename;
@@ -116,26 +127,20 @@ int main(int argc, char *argv[])
 
 	bytes_read = read(fd, &header, sizeof(ElfHeader));
 	if (bytes_read == -1)
-	{
-		perror("Error reading file");
-		close(fd);
-		exit(98);
-	}
+		perror("Error reading file"), close(fd), exit(98);
 	if (header.e_ident[0] != 0x7F ||
 			header.e_ident[1] != 'E' ||
 			header.e_ident[2] != 'L' ||
 			header.e_ident[3] != 'F')
 	{
-		fprintf(stderr, "readelf: Error: Not an ELF file - it has the wrong magic bytes at the start\n");
+		fprintf(stderr, "readelf: Error: Not an ELF file -");
+		fprintf(stderr, "it has the wrong magic bytes at the start\n");
 		close(fd);
 		exit(98);
 	}
 	offset = lseek(bytes_read, 0, SEEK_SET);
 	if (offset > 0)
-	{
-		close(fd);
-		exit(98);
-	}
+		close(fd), exit(98);
 	displayElfHeaderInfo(&header);
 
 	close(fd);
