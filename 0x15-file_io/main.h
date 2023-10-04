@@ -18,6 +18,7 @@
 #define ELFOSABI_TRU64      10
 #define ELFOSABI_ARM        97
 #define ELFOSABI_STANDALONE 255
+#define CUSTOM_ELF_VERSION 2
 
 /**
  * struct ElfHeader - ELF header structure
