@@ -45,7 +45,7 @@ struct ElfHeader
 	unsigned char e_abiversion;
 	unsigned char e_pad[7];
 	unsigned short e_type2;
-	unsigned long e_entry;
+	unsigned int e_entry;
 };
 typedef struct ElfHeader ElfHeader;
 void displayElfHeaderInfo(const struct ElfHeader *header);
