@@ -66,6 +66,7 @@ int main(int argc, char *argv[])
 	int fd;
 	ElfHeader header;
 	ssize_t bytes_read;
+	off_t offset;
 
 	if (argc != 2)
 	{
@@ -97,7 +98,7 @@ int main(int argc, char *argv[])
 		close(fd);
 		exit(98);
 	}
-	offset = lseek(bytes_read, 0, SEEK_SET)
+	offset = lseek(bytes_read, 0, SEEK_SET);
 		if (offset < 0)
 		{
 			close (fd);
