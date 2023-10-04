@@ -61,31 +61,31 @@ void printOSABI(u_int8_t struct_e_osabi)
 	switch (struct_e_osabi)
 	{
 		case ELFOSABI_NONE:
-			osabi_description = "UNIX System V ABI";
+			osabi_description = "UNIX - System V";
 			break;
 		case ELFOSABI_HPUX:
-			osabi_description = "HP-UX ABI";
+			osabi_description = "UNIX - HP-UX";
 			break;
 		case ELFOSABI_NETBSD:
-			osabi_description = "NetBSD ABI";
+			osabi_description = "UNIX - NetBSD";
 			break;
 		case ELFOSABI_LINUX:
-			osabi_description = "Linux ABI";
+			osabi_description = "UNIX - Linux";
 			break;
 		case ELFOSABI_SOLARIS:
-			osabi_description = "Solaris ABI";
+			osabi_description = "UNIX - Solaris";
 			break;
 		case ELFOSABI_IRIX:
-			osabi_description = "IRIX ABI";
+			osabi_description = "UNIX - IRIX";
 			break;
 		case ELFOSABI_FREEBSD:
-			osabi_description = "FreeBSD ABI";
+			osabi_description = "UNIX - FreeBSD";
 			break;
 		case ELFOSABI_TRU64:
-			osabi_description = "TRU64 UNIX ABI";
+			osabi_description = "UNIX - TRU64 UNIX";
 			break;
 		case ELFOSABI_ARM:
-			osabi_description = "ARM architecture ABI";
+			osabi_description = "ARM architecture";
 			break;
 		case ELFOSABI_STANDALONE:
 			osabi_description = "Stand-alone (embedded) ABI";
