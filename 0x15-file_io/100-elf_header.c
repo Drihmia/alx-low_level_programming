@@ -52,7 +52,7 @@ void displayElfHeaderInfo(const struct ElfHeader *header)
 			type_description = "EXEC (Executable file)";
 			break;
 		default:
-			type_description = "Unknown";
+			type_description = "<unknown: 53>";
 	}
 	printf("  OS/ABI:  %s\n", osabi_description);
 	printf("  ABI Version: %u\n", header->e_abiversion);
@@ -97,6 +97,12 @@ int main(int argc, char *argv[])
 		close(fd);
 		exit(98);
 	}
+	offset = lseek(bytes_read, 0, SEEK_SET)
+		if (offset < 0)
+		{
+			close (fd);
+			exit (98);
+		}
 	displayElfHeaderInfo(&header);
 
 	close(fd);
