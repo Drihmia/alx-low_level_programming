@@ -13,9 +13,9 @@ void displayElfHeaderInfo(const Elf64_Ehdr *header)
 	char *endian, *end_s, *end_g, *ELF_class;
 
 
-	printf("ELF Header:\n"), printf("  Magic:   ");
+	printf("ELF Header:\n"), printf("  Magic:  ");
 	for (i = 0; i < 16; i++)
-		printf("%02x ", header->e_ident[i]);
+		printf(" %02x", header->e_ident[i]);
 	printf("\n"), ELF_class = header->e_ident[4] == 1 ? "ELF32" : "ELF64";
 	printf("  Class:                             %s\n", ELF_class);
 	end_s = "2's complement, little endian", end_g = "2's complement, Big-endian";
