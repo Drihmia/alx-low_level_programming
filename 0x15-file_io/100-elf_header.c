@@ -14,10 +14,10 @@ void displayElfHeaderInfo(const struct ElfHeader *header)
 
 
 	printf("ELF Header:\n");
-	printf("  Magic:  ");
+	printf("  Magic:   ");
 	for (i = 0; i < 16; i++)
 	{
-		printf(" %02x", header->e_ident[i]);
+		printf("%02x ", header->e_ident[i]);
 	}
 	printf("\n");
 	ELF_class = header->e_ident[4] == 1 ? "ELF32" : "ELF64";
