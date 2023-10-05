@@ -21,8 +21,8 @@ void displayElfHeaderInfo(const Elf64_Ehdr *header)
 	end_s = "2's complement, little endian", end_g = "2's complement, Big-endian";
 	endian = header->e_ident[5] == 1 ? end_s : end_g;
 	printf("  Data:                              %s\n", endian);
-	printf("  Version:                           %u (current)\n",
-			header->e_version);
+	printf("  Version:                           %s\n",
+			EV_CURRENT == 1 ? "1 (current)" : "1");
 	switch (header->e_type)
 	{
 		case 0:
