@@ -6,7 +6,7 @@
  * Return: None.
  */
 
-void displayElfHeaderInfo(const struct ElfHeader *header)
+void displayElfHeaderInfo(const Elf64_Ehdr *header)
 {
 	int i;
 	const char *type_description;
@@ -21,7 +21,7 @@ void displayElfHeaderInfo(const struct ElfHeader *header)
 	end_s = "2's complement, little endian", end_g = "2's complement, Big-endian";
 	endian = header->e_ident[5] == 1 ? end_s : end_g;
 	printf("  Data:                              %s\n", endian);
-	printf("  Version:                           %lu (current)\n",
+	printf("  Version:                           %u (current)\n",
 			header->e_version);
 	switch (header->e_type)
 	{
@@ -40,21 +40,21 @@ void displayElfHeaderInfo(const struct ElfHeader *header)
 		default:
 			type_description = "Unknown";
 	}
-	printOSABI(header->e_osabi);
-	printf("  ABI Version:                       %u\n", header->e_abiversion);
+	printOSABI(header->e_ident[EI_OSABI]);
+	printf("  ABI Version:                       %u\n", header->e_version);
 	printf("  Type:                              %s\n", type_description);
 	printf("  Entry point address:               0x%lx\n", header->e_entry);
 }
 /**
  * printOSABI - as the name says.
- * @struct_e_osabi: the struct variable.
+ * @osabi: the struct variable.
  * Return. NONE
  */
-void printOSABI(u_int8_t struct_e_osabi)
+void printOSABI(uint8_t osabi)
 {
 	const char *osabi_description;
 
-	switch (struct_e_osabi)
+	switch (osabi)
 	{
 		case ELFOSABI_SYSV:
 			osabi_description = "UNIX - System V";
@@ -103,7 +103,7 @@ int main(int argc, char *argv[])
 {
 	const char *elf_filename;
 	int fd;
-	ElfHeader header;
+	Elf64_Ehdr header;
 	ssize_t bytes_read;
 	off_t offset;
 
@@ -120,7 +120,7 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	bytes_read = read(fd, &header, sizeof(ElfHeader));
+	bytes_read = read(fd, &header, sizeof(header));
 	if (bytes_read == -1)
 		perror("Error reading file"), close(fd), exit(98);
 	if (header.e_ident[0] != 0x7F ||
@@ -138,6 +138,6 @@ int main(int argc, char *argv[])
 	displayElfHeaderInfo(&header);
 
 	close(fd);
-	exit(0);
+	return (0);
 }
 
