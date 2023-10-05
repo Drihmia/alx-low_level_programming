@@ -10,21 +10,16 @@ void displayElfHeaderInfo(const struct ElfHeader *header)
 {
 	int i;
 	const char *type_description;
-	char *endian, *end_li, *end_big, *ELF_class;
+	char *endian, *end_s, *end_g, *ELF_class;
 
 
-	printf("ELF Header:\n");
-	printf("  Magic:   ");
+	printf("ELF Header:\n"), printf("  Magic:   ");
 	for (i = 0; i < 16; i++)
-	{
 		printf("%02x ", header->e_ident[i]);
-	}
-	printf("\n");
-	ELF_class = header->e_ident[4] == 1 ? "ELF32" : "ELF64";
+	printf("\n"), ELF_class = header->e_ident[4] == 1 ? "ELF32" : "ELF64";
 	printf("  Class:                             %s\n", ELF_class);
-	end_li = "2's complement, little endian";
-	end_big = "2's complement, Big-endian";
-	endian = header->e_ident[5] == 1 ? end_li : end_big;
+	end_s = "2's complement, little endian", end_g = "2's complement, Big-endian";
+	endian = header->e_ident[5] == 1 ? end_s : end_g;
 	printf("  Data:                              %s\n", endian);
 	printf("  Version:                           %lu (current)\n",
 			header->e_version);
@@ -45,8 +40,6 @@ void displayElfHeaderInfo(const struct ElfHeader *header)
 		default:
 			type_description = "Unknown";
 	}
-
-
 	printOSABI(header->e_osabi);
 	printf("  ABI Version:                       %u\n", header->e_abiversion);
 	printf("  Type:                              %s\n", type_description);
@@ -119,7 +112,6 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "Usage: %s elf_filename\n", argv[0]);
 		exit(98);
 	}
-
 	elf_filename = argv[1];
 	fd = open(elf_filename, O_RDONLY);
 	if (fd == -1)
@@ -137,7 +129,6 @@ int main(int argc, char *argv[])
 			header.e_ident[3] != 'F')
 	{
 		fprintf(stderr, "readelf: Error: Not an ELF file -");
-		fprintf(stderr, "it has the wrong magic bytes at the start\n");
 		close(fd);
 		exit(98);
 	}
