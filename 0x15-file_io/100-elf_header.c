@@ -39,12 +39,15 @@ void displayElfHeaderInfo(const struct ElfHeader *header)
 		case 2:
 			type_description = "EXEC (Executable file)";
 			break;
+		case 3:
+			type_description = "Shared object file";
+			break;
 		default:
 			type_description = "Unknown";
 	}
 
 
-	printOSABI(header->e_type);
+	printOSABI(header->e_osabi);
 	printf("  ABI Version:                       %u\n", header->e_abiversion);
 	printf("  Type:                              %s\n", type_description);
 	printf("  Entry point address:               0x%lx\n", header->e_entry);
