@@ -20,7 +20,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 			(*head)->next->prev = NULL;
 		*head = (*head)->next;
 		free(tmp);
-		return (0);
+		return (1);
 	}
 	tmp = get_dnodeint_at_index(h, index);
 	if (!tmp)
@@ -36,7 +36,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		tmp->prev->next = tmp->next;
 		free(tmp);
 	}
-	return (0);
+	return (1);
 }
 /**
  * get_dnodeint_at_index - get the node at the index n.
