@@ -13,7 +13,7 @@
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *node, *head = NULL, *tmp = NULL;
+	hash_node_t *node = NULL, *head = NULL, *tmp = NULL;
 	uli index = 0;
 
 	if (!ht || !key || !(*(key + 0)))
