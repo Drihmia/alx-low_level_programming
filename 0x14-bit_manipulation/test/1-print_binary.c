@@ -1,4 +1,4 @@
-#include <main.h>
+#include "main.h"
 
 
 /**
@@ -13,8 +13,8 @@ void print_binary(unsigned long int n)
 		return;
 	}
 	print_binary(n >> 1);
-	n = n & 0b01;	
-	printf("%lu", n);
+	n = n & 1;	
+	_putchar(n);
 }
 
 

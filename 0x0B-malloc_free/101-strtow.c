@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
+int word_count(char *str);
 
 /**
  * strtow - splits a string into words.
@@ -14,6 +15,10 @@ char **strtow(char *str)
 
 	if (str == NULL || *str == '\0')
 		return (NULL);
+	if (word_count(str) == 0)
+		return (NULL);
+	else
+		ar_2 = malloc(1 + word_count(str) * sizeof(char *));
 	while (*(str + i) != '\0')
 	{
 		j = 0;
@@ -78,3 +83,30 @@ char **strtow(char *str)
 	tmp = NULL;
 	return (ar_2);
 }
+
+/**
+ * word_count - count the number of word in a text.
+ * @str: pointer to string that hold the text.
+ * Return: number of words.
+ */
+
+int word_count(char *str)
+{
+	int count = 0, i = 0, word;
+
+	while (*(str + i) != '\0')
+	{
+		word = 0;
+		for (; *(str + i) == ' '; i++)
+			;
+		while (*(str + i) != ' ' && *(str + i) != '\0')
+		{
+			i++;
+			word = 1;
+		}
+		if (word == 1)
+			count++;
+	}
+	return (count);
+}
+
