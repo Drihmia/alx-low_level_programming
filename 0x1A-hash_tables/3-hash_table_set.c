@@ -39,7 +39,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		tmp = head;
 		while (tmp)
 		{
-			if (tmp->key && strcmp(tmp->key, key))
+			if (tmp->key && !strcmp(tmp->key, key))
 			{
 				tmp->value = strdup(value);
 				return (1);
