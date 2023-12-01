@@ -16,11 +16,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *node, *head = NULL, *tmp = NULL;
 	uli index = 0;
 
-	if (!ht || !key)
+	if (!ht || !key || !(*(key + 0)))
 		return (0);
 	if (ht->size == 0)
 		return (0);
-
 	node = malloc(sizeof(hash_node_t));
 	if (!node)
 		return (0);
