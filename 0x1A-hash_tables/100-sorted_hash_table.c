@@ -144,7 +144,7 @@ void shash_table_print(const shash_table_t *ht)
 }
 
 /**
- * shash_table_print - a function that prints a hash table.
+ * shash_table_print_rev - a function that prints a hash table.
  * @ht: the hash table you want to look into.
  * You should print the key/value in the order that they
  * appear in the array of hash table (Order: array, list).
