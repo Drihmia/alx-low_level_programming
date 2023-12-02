@@ -19,21 +19,8 @@ void hash_table_print(const hash_table_t *ht)
 	{
 		head = ht->array[i];
 
-		if (head && head->key)
+		while (head)
 		{
-			if (flag)
-				printf(", ");
-			printf("'%s': '%s'", head->key, head->value);
-			flag = 1;
-		}
-	}
-	for (i = 0; i < ht->size; i++)
-	{
-		head = ht->array[i];
-
-		while (head && head->next)
-		{
-			head = head->next;
 			if (head->key)
 			{
 				if (flag)
@@ -41,6 +28,7 @@ void hash_table_print(const hash_table_t *ht)
 				printf("'%s': '%s'", head->key, head->value);
 				flag = 1;
 			}
+			head = head->next;
 		}
 	}
 	printf("}\n");
