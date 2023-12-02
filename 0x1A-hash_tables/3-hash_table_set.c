@@ -45,6 +45,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			if (tmp->key && !strcmp(tmp->key, key))
 			{
 				free(tmp->value), tmp->value = node->value;
+				free(node->key), free(node);
 				return (1);
 			}
 			tmp = tmp->next; }
