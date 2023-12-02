@@ -150,7 +150,7 @@ void shash_table_print(const shash_table_t *ht)
  * appear in the array of hash table (Order: array, list).
  * If ht is NULL, don’t print anything
  */
-void shash_table_print(const shash_table_t *ht)
+void shash_table_print_rev(const shash_table_t *ht)
 {
 	(void) ht;
 }
