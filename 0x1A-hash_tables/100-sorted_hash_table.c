@@ -1,4 +1,5 @@
 #include "hash_tables.h"
+void red(void);
 /**
  * shash_table_create - a function that creates a hash table.
  * @size: the size of the array
@@ -238,6 +239,8 @@ void shash_table_print_rev(const shash_table_t *ht)
 	shash_node_t *stl = NULL;
 	int sflag = 0;
 
+	if (!ht || !ht->array)
+		return;
 	stl = ht->stail;
 	printf("{");
 	while (stl)
