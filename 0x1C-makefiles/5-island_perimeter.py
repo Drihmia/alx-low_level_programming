@@ -6,8 +6,11 @@ This file contain a funtion called :
 
 
 def island_perimeter(grid):
-    start_x = []
-    start_y = []
+    """ a funtion that returns the perimeter of the
+    island described in grid
+    """
+
+    start_x, start_y = [], []
     for i, row in enumerate(grid):
         for j, cell in enumerate(row):
             if cell == 1:
@@ -17,6 +20,10 @@ def island_perimeter(grid):
 
 
 def most_common_element(lst):
+    """  funtion that return the max_count of the
+    most repated element in the list
+    """
+
     if not lst:
         return 0
     max_count = 0
