@@ -11,30 +11,5 @@ def island_perimeter(grid):
     """
     if not grid:
         return 0
-    start_x, start_y = [], []
-    for i, row in enumerate(grid):
-        for j, cell in enumerate(row):
-            if cell == 1:
-                start_x.append(j)
-                start_y.append(i)
-    most_common_x = most_common_element(start_x)
-    most_common_y = most_common_element(start_y)
-    return (most_common_x + most_common_y) * 2
-
-
-def most_common_element(lst):
-    """  funtion that return the max_count of the
-    most repated element in the list
-    """
-
-    if not lst:
-        return 0
-    max_count = 0
-
-    for item in set(lst):
-        count = lst.count(item)
-        if count > max_count:
-            max_count = count
-    if max_count == 1:
-        max_count = 0
-    return max_count
+    list_of_1 = [row.count(1) for row in grid if row.count(1) > 0]
+    return (len(list_of_1) + max(list_of_1)) * 2
