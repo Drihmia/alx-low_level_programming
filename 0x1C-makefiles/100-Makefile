@@ -5,7 +5,9 @@ NAME=school
 CFLAGS=-Wall -Werror -Wextra -pedantic
 HDR=header.h
 
-all: $(HDR) $(OBJ)
+all: $(HDR) $(NAME)
+
+$(NAME): $(OBJ)
 	$(CC)  $(OBJ) -o $(NAME) 
 main.o: main.c
 school.o: school.c
