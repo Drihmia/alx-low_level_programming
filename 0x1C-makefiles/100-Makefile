@@ -3,14 +3,12 @@ SRC=main.c school.c
 OBJ=$(SRC:.c=.o)
 NAME=school
 CFLAGS=-Wall -Werror -Wextra -pedantic
-HDR=header.h
+HDR=m.h
 
 all: $(HDR) $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC)  $(OBJ) -o $(NAME) 
-main.o: main.c
-school.o: school.c
+	$(CC)  $^ -o $@
 
 clean:
 	$(RM) *~ *.swp $(NAME)
@@ -20,4 +18,4 @@ fclean: clean oclean
 
 re: oclean  all
 
-.PHONY: clean oclean fclean all re
+.PHONY: all clean oclean fclean re
