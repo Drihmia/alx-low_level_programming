@@ -19,9 +19,7 @@ def island_perimeter(grid):
                 start_y.append(i)
     most_common_x = most_common_element(start_x)
     most_common_y = most_common_element(start_y)
-    if not most_common_x or not most_common_y:
-        return 0
-    return (most_common_element(start_x) + most_common_element(start_y)) * 2
+    return (most_common_x + most_common_y) * 2
 
 
 def most_common_element(lst):
