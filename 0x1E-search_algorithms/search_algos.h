@@ -57,7 +57,7 @@ void print_ar(int *ar, size_t start, size_t end);
 
 /* ++++++++++++++++ particular ones +++++++++++++++++++++++ */
 /* task #1 */
-int b_search(int *array, size_t l, size_t h, int val);
+int b_search(int *ar, size_t lower, size_t higher, int val);
 
 
 #endif /* SEARCH_ALGOS_H */
