@@ -55,8 +55,9 @@ skiplist_t *linear_skip(skiplist_t *list, int value);
 /* ++++++++++++++++ general ones +++++++++++++++++++++++*/
 void print_ar(int *ar, size_t start, size_t end);
 
-/* ++++++++++++++++ particular ones +++++++++++++++++++++++*/
-int b_search(int *array, size_t l, size_t h, int val); /* task #1 */
+/* ++++++++++++++++ particular ones +++++++++++++++++++++++ */
+/* task #1 */
+int b_search(int *array, size_t l, size_t h, int val);
 
 
 #endif /* SEARCH_ALGOS_H */
