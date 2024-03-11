@@ -36,9 +36,9 @@ int b_search(int *ar, size_t lower, size_t higher, int val)
 	size_t middle;
 
 	print_ar(ar, lower, higher);
-	middle = (lower + higher) / 2;
+	middle = lower + (higher - lower) / 2;
 
-	if (higher == lower)
+	if (higher <= lower)
 	{
 		return (-1);
 	}
