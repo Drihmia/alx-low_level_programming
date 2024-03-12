@@ -42,6 +42,8 @@ int b_search(int *ar, size_t lower, size_t higher, int val)
 
 	if (higher <= lower)
 	{
+		if (val == ar[lower])
+			return (lower);
 		return (-1);
 	}
 
