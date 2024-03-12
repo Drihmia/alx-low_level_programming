@@ -7,10 +7,12 @@
  * @array: is a pointer to the first element of the array to search in.
  * @size: is the number of elements in array.
  * @value: is the value to search for.
+ *
  * Notes:
  * - I will use the sqrt() function included in <math.h> (-lm)
  * - I will use the square root of the size of the array as the jump step.
  * - Assuming that the array will be sorted in ascending order
+ *
  * Return:
  * - The function will return the first index where value is located.
  * - If value is not present in array or if array is NULL, the function
