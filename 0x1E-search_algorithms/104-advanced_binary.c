@@ -12,7 +12,7 @@
   * - Assuming that the array will be sorted in ascending order
   * - Assuming that the value won’t appear more than once in array
   * Return:
-  * - The function will return the index where value is located.
+  * - The function will return the first index where value is located.
   */
 int advanced_binary(int *array, size_t size, int value)
 {
@@ -58,7 +58,7 @@ int b_search(int *ar, size_t lower, size_t higher, int val)
 	else
 	{
 		if (middle - 1 >= lower && val == ar[middle - 1])
-			return (b_search(ar, lower, middle, val));
+			return (b_search(ar, lower, middle - 1, val));
 		else
 			return (middle);
 	}
