@@ -55,10 +55,10 @@ int b_search(int *ar, size_t lower, size_t higher, int val)
 	{
 		return (b_search(ar, lower, middle - 1, val));
 	}
-	else
+	else if (val == ar[middle])
 	{
 		if (middle - 1 >= lower && val == ar[middle - 1])
-			return (b_search(ar, lower, middle - 1, val));
+			return (b_search(ar, lower, middle, val));
 		else
 			return (middle);
 	}
