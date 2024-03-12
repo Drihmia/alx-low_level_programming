@@ -30,7 +30,7 @@ int jump_search(int *array, size_t size, int value)
 	jump = sqrt(size);
 	for (i = 0; i < size; i += jump)
 	{
-		if (i + jump > size)
+		if (i + jump >= size)
 			limit = size - 1;
 		else
 			limit = i + jump;
