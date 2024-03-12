@@ -35,7 +35,7 @@ int advanced_binary(int *array, size_t size, int value)
 
 int b_search(int *ar, size_t lower, size_t higher, int val)
 {
-	size_t middle, i;
+	size_t middle;
 
 	print_ar(ar, lower, higher);
 	middle = lower + (higher - lower) / 2;
@@ -57,11 +57,10 @@ int b_search(int *ar, size_t lower, size_t higher, int val)
 	}
 	else
 	{
-		for (i = lower; i <= higher; i++)
-		{
-			if (val == ar[i])
-				return (i);
-		}
+		if (val == ar[middle - 1])
+			return (b_search(ar, lower, middle - 1, val));
+		else
+			return (middle);
 	}
 	return (-1);
 }
