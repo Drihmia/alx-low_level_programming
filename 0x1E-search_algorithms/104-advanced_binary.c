@@ -53,7 +53,7 @@ int b_search(int *ar, size_t lower, size_t higher, int val)
 	}
 	else if (val < ar[middle])
 	{
-		return (b_search(ar, lower, middle - 1, val));
+		return (b_search(ar, lower, middle, val));
 	}
 	else if (val == ar[middle])
 	{
