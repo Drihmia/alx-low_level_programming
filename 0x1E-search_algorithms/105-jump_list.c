@@ -39,33 +39,33 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 		else
 			limit = i + jump;
 
-		printf("hii_-1\n");
+		/*printf("hii_-1\n");*/
 		next = node_at_index(cur, jump);
-		printf("hii_0 %lu\n", limit);
+		/*printf("hii_0 %lu\n", limit);*/
 		if (i)
-			printf("Value checked array[%lu] = [%d]\n", cur->index, cur->n);
-		printf("hii_1\n");
-       /*         if ((value >= cur->n && value < next->n) ||*/
-				/*(limit == size - 1 && limit != i + jump))*/
-		/*{*/
+			printf("Value checked at index [%lu] = [%d]\n", cur->index, cur->n);
+		/*printf("hii_1\n");*/
+		if ((value >= cur->n && value < next->n) ||
+				(limit == size - 1 && limit != i + jump))
+		{
 		/*printf("hii_2\n");*/
-			/*bounded = 1;*/
-			/*printf("Value checked array[%lu] = [%d]\n", next->index, next->n);*/
-			/*printf("Value found between indexes [%lu] and [%lu]\n",*/
-					/*i, limit);*/
-			/*while (cur != next && cur->index < size)*/
-			/*{*/
-				/*printf("Value checked array[%lu] = [%d]\n", cur->index, cur->n);*/
-				/*if (value == cur->n)*/
-					/*return (cur);*/
-				/*cur = cur->next;*/
-			/*}*/
-		/*}*/
+			bounded = 1;
+			printf("Value checked at index [%lu] = [%d]\n", next->index, next->n);
+			printf("Value found between indexes [%lu] and [%lu]\n",
+					i, limit);
+			while (cur != next->next && cur->index < size)
+			{
+				printf("Value checked array[%lu] = [%d]\n", cur->index, cur->n);
+				if (value == cur->n)
+					return (cur);
+				cur = cur->next;
+			}
+		}
 		if (bounded)
 			break;
-		printf("hii_2\n");
+		/*printf("hii_2\n");*/
 		cur = next;
-		printf("hii_3\n");
+		/*printf("hii_3\n");*/
 	}
 	return (NULL);
 }
@@ -84,9 +84,10 @@ listint_t *node_at_index(listint_t *cu_node, size_t jump)
 {
 	size_t i;
 	listint_t *current = cu_node;
-	for (i = 0; i < jump && current; i++)
+
+	for (i = 0; i < jump && current->next; i++)
 	{
-		// printf("the node is %d at %lu\n", current->n, current->index);
+		/*printf("the node is %d at %lu\n", current->n, current->index);*/
 		current = current->next;
 	}
 	return (current);
