@@ -10,7 +10,13 @@ C programming day has just began
 * [0x07-pointers_arrays_strings](https://github.com/Drihmia/alx-low_level_programming/tree/main/0x07-pointers_arrays_strings/README.md)
 * [0x08-recursion](https://github.com/Drihmia/alx-low_level_programming/tree/main/0x08-recursion/README.md)
 * [0x09-static_libraries](https://github.com/Drihmia/alx-low_level_programming/tree/main/0x09-static_libraries/README.md)
-
+* [0x10-variadic_functions](https://github.com/Drihmia/alx-low_level_programming/tree/main/0x10-variadic_functions/README.md)
+* [0x12-singly_linked_lists](https://github.com/Drihmia/alx-low_level_programming/tree/main/0x12-singly_linked_lists/README.md)
+* [0x13-more_singly_linked_lists](https://github.com/Drihmia/alx-low_level_programming/tree/main/0x13-more_singly_linked_lists/README.md)
+* [0x14-bit_manipulation](https://github.com/Drihmia/alx-low_level_programming/tree/main/0x14-bit_manipulation/README.md)
+* [0x15-file_io](https://github.com/Drihmia/alx-low_level_programming/tree/main/0x15-file_io/README.md)
+* [0x17-doubly_linked_lists](https://github.com/Drihmia/alx-low_level_programming/tree/main/0x17-doubly_linked_lists/README.md)
+* [0x18-dynamic_libraries](https://github.com/Drihmia/alx-low_level_programming/tree/main/0x18-dynamic_libraries/README.md)
 
 
 * [0x0A-argc_argv](https://github.com/Drihmia/alx-low_level_programming/tree/main/0x0A-argc_argv/README.md)
@@ -18,4 +24,7 @@ C programming day has just began
 * [0x0C-more_malloc_free](https://github.com/Drihmia/alx-low_level_programming/tree/main/0x0C-more_malloc_free/README.md)
 * [0x0D-preprocessor](https://github.com/Drihmia/alx-low_level_programming/tree/main/0x0D-preprocessor/README.md)
 * [0x0E-structures_typedef](https://github.com/Drihmia/alx-low_level_programming/tree/main/0x0E-structures_typedef/README.md)
-* [test to readme file](https://github.com/Drihmia/alx-low_level_programming/blob/main/0x0D-preprocessor/README.md)
+* [0x0F-function_pointers](https://github.com/Drihmia/alx-low_level_programming/tree/main/0x0F-function_pointers/README.md)
+* [0x1A-hash_tables](https://github.com/Drihmia/alx-low_level_programming/tree/main/0x1A-hash_tables/README.md)
+* [0x1C-makefiles](https://github.com/Drihmia/alx-low_level_programming/tree/main/0x1C-makefiles/README.md)
+* [0x1E-search_algorithms](https://github.com/Drihmia/alx-low_level_programming/tree/main/0x1E-search_algorithms/README.md)
