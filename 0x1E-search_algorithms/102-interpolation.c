@@ -40,6 +40,12 @@ int interpolation_search(int *array, size_t size, int value)
 			if (value == array[i])
 				return (i);
 		}
+		for (i = pos; i >= 0; i--)
+		{
+			printf("Value checked array[%lu] = [%d]\n", i, array[i]);
+			if (value == array[i])
+				return (i);
+		}
 	}
 	return (-1);
 }
