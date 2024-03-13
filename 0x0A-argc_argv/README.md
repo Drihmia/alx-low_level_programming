@@ -1,24 +1,37 @@
-Learning Objectives
-At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
+# ** 0x0A. C - argc, argv **
+# [HOME](https://github.com/Drihmia/alx-low_level_programming/blob/main/README.md)
+# [Previous Project](https://github.com/Drihmia/alx-low_level_programming/tree/main/0x0B-malloc_free/README.md)
+# [Next Project](https://github.com/Drihmia/alx-low_level_programming/tree/main/0x0B-malloc_free/README.md)
 
-General
-How to use arguments passed to your program
-What are two prototypes of main that you know of, and in which case do you use one or the other
-How to use __attribute__((unused)) or (void) to compile functions with unused variables or parameters
-Copyright - Plagiarism
-You are tasked to come up with solutions for the tasks below yourself to meet with the above learning objectives.
-You will not be able to meet the objectives of this or any following project by copying and pasting someone else’s work.
-You are not allowed to publish any content of this project.
-Any form of plagiarism is strictly forbidden and will result in removal from the program.
-Requirements
-General
-Allowed editors: vi, vim, emacs
-All your files will be compiled on Ubuntu 20.04 LTS using gcc, using the options -Wall -Werror -Wextra -pedantic -std=gnu89
-All your files should end with a new line
-A README.md file, at the root of the folder of the project is mandatory
-Your code should use the Betty style. It will be checked using betty-style.pl and betty-doc.pl
-You are not allowed to use global variables
-No more than 5 functions per file
-The prototypes of all your functions and the prototype of the function _putchar should be included in your header file called main.h
-Don’t forget to push your header file
-You are allowed to use the standard library0x0A-argc_argv
+---
+## Objectives
+
+Throughout this project, the primary objectives were:
+
+- **Command Line Arguments:** Mastery of how to use arguments passed to your program via the command line, understanding how to access and process these arguments within the `main` function in C programming.
+
+- **Main Function Prototypes:** Understanding the two prototypes of the `main` function in C programming: `int main(void)` and `int main(int argc, char *argv[])`. Knowing when to use each prototype depending on whether the program requires command-line arguments or not.
+
+- **Unused Variables or Parameters:** Familiarization with techniques such as `__attribute__((unused))` or `(void)` to compile functions with unused variables or parameters without triggering compiler warnings. Understanding when and how to use these techniques to maintain code clarity and prevent unnecessary warnings.
+---
+
+This directory contains solutions to tasks related to command-line arguments in C programming using `argc` and `argv`.
+
+## Tasks:
+
+1. [**0-whatsmyname.c**](https://github.com/Drihmia/alx-low_level_programming/blob/main/0x0A-argc_argv/0-whatsmyname.c): A program that prints its name, followed by a newline.
+
+2. [**1-args.c**](https://github.com/Drihmia/alx-low_level_programming/blob/main/0x0A-argc_argv/1-args.c): A program that prints the number of arguments passed into it.
+
+3. [**2-args.c**](https://github.com/Drihmia/alx-low_level_programming/blob/main/0x0A-argc_argv/2-args.c): A program that prints all arguments it receives.
+
+4. [**3-mul.c**](https://github.com/Drihmia/alx-low_level_programming/blob/main/0x0A-argc_argv/3-mul.c): A program that multiplies two numbers.
+
+5. [**4-add.c**](https://github.com/Drihmia/alx-low_level_programming/blob/main/0x0A-argc_argv/4-add.c): A program that adds positive numbers.
+
+6. [**100-change.c**](https://github.com/Drihmia/alx-low_level_programming/blob/main/0x0A-argc_argv/100-change.c): A program that prints the minimum number of coins to make change for an amount of money.
+Feel free to check out each task for a detailed description and the corresponding solution file!
+
+# [HOME](https://github.com/Drihmia/alx-low_level_programming/blob/main/README.md)
+# [Previous Project](https://github.com/Drihmia/alx-low_level_programming/tree/main/0x0B-malloc_free/README.md)
+# [Next Project](https://github.com/Drihmia/alx-low_level_programming/tree/main/0x0B-malloc_free/README.md)

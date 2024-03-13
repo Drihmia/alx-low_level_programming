@@ -1,5 +1,9 @@
 # 0x1E. C - Search Algorithms
 
+# [HOME](https://github.com/Drihmia/alx-low_level_programming/blob/main/README.md)
+# [Previous Project](https://github.com/Drihmia/alx-low_level_programming/tree/main/0x1C-makefiles/README.md)
+---
+
 ## General
 -  What is a search algorithm
 -  What is a linear search
@@ -7,9 +11,9 @@
 -  What is the best search algorithm to use depending on your needs
 # Resources
 - ## Read or watch:
-    - [Space complexity (1))(https://www.geeksforgeeks.org/g-fact-86/)
+    - [Space complexity (1))](https://www.geeksforgeeks.org/g-fact-86/)
     - [Serach Algorithms video playlist](https://www.youtube.com/playlist?list=PLEJXowNB4kPwTb4BivkY0dENHmXdOEM3V)
-
+---
 ## More Info
 You will be asked to write files containing big O notations. Please use this format:
 - O(1)
@@ -20,7 +24,7 @@ You will be asked to write files containing big O notations. Please use this for
 - sqrt n -> O(sqrt(n))
 - log(n) -> O(log(n))
 - n * log(n) -> O(nlog(n))
-
+---
 # Search Algorithms
 
 This project includes various search algorithms implemented in C. Here's a brief overview of each algorithm:
@@ -51,5 +55,7 @@ Linear skip is a search algorithm that combines the principles of linked lists a
 
 ## Skip List
 Skip list is a data structure that allows for efficient search, insertion, and deletion operations. It maintains multiple levels of linked lists with skip links to expedite search operations. It has a time complexity of O(log n) for search operations.
+---
 
-
+# [HOME](https://github.com/Drihmia/alx-low_level_programming/blob/main/README.md)
+# [Previous Project](https://github.com/Drihmia/alx-low_level_programming/tree/main/0x1C-makefiles/README.md)

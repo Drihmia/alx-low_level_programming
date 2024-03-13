@@ -1,3 +1,8 @@
+# ** 0x0B. C - malloc, free **
+# [HOME](https://github.com/Drihmia/alx-low_level_programming/blob/main/README.md)
+# [Previous Project](https://github.com/Drihmia/alx-low_level_programming/tree/main/0x0A-argc_argv/README.md)
+# [Next Project](https://github.com/Drihmia/alx-low_level_programming/tree/main/0x0C-more_malloc_free/README.md)
+---
 ## Concepts
 * For this project, we expect you to look at this concept:
 
@@ -9,40 +14,45 @@
 [0x0a - malloc & free - quick overview.pdf](https://github.com/Drihmia/alx-low_level_programming/blob/5ccd67a88eb4f2f0a908c6e4f054a99397394a50/0x0B-malloc_free/a094c90e7f466bbeaa49cb24c8f04e7f27aaad41.pdf).
 
 [Dynamic memory allocation in C - malloc calloc realloc free](https://www.youtube.com/watch?v=xDVC3wKjS64&ab_channel=mycodeschool) (stop at 6:50)`
-## man or help:
-* malloc
-* free
+
 ---
-# Learning Objectives
-**At the end of this project, you are expected to be able to explain to anyone, without the help of Google:**
+## Objectives
+
+Throughout this project, the primary objectives were:
+
+- **Understanding Allocation Types:** Differentiating between automatic and dynamic allocation, including their characteristics, advantages, and use cases in C programming.
+
+- **Memory Allocation Functions:** Mastery of the functions `malloc` and `free`, understanding their purposes, differences, and how to use them effectively for dynamic memory allocation and deallocation in C programming.
+
+- **Usage of malloc:** Gaining insight into why and when to use `malloc` for dynamic memory allocation, understanding its importance in managing memory efficiently and avoiding common pitfalls such as memory leaks.
+
+- **Memory Leak Detection:** Familiarization with the usage of Valgrind to check for memory leaks in C programs, understanding how to interpret Valgrind's output and address memory issues effectively.
 ---
-## General
-- What is the difference between automatic and dynamic allocation
-- What is malloc and free and how to use them
-- Why and when use malloc
-- How to use valgrind to check for memory leak
----
-## Copyright - Plagiarism
-- You are tasked to come up with solutions for the tasks below yourself to meet with the above learning objectives.
-- You will not be able to meet the objectives of this or any following project by copying and pasting someone else’s work.
-- You are not allowed to publish any content of this project.
-- Any form of plagiarism is strictly forbidden and will result in removal from the program.
----
-# Requirements
-## General
-- Allowed editors: vi, vim, emacs
-- All your files will be compiled on Ubuntu 20.04 LTS using gcc, using the options -Wall -Werror -Wextra -pedantic -std=gnu89
-- All your files should end with a new line
-- A README.md file, at the root of the folder of the project is mandatory
-- Your code should use the Betty style. It will be checked using betty-style.pl and betty-doc.pl
-- You are not allowed to use global variables
-- No more than 5 functions per file
-- The only C standard library functions allowed are malloc and free. Any use of functions like printf, puts, calloc, realloc etc… is forbidden
-- You are allowed to use _putchar
-- You don’t have to push _putchar.c, we will use our file. If you do it won’t be taken into account
-- In the following examples, the main.c files are shown as examples. You can use them to test your functions, but you don’t have to push them to your repo (if you do we won’t take them into account). We will use our own main.c files at compilation. Our main.c files might be different from the one shown in the examples
-- The prototypes of all your functions and the prototype of the function _putchar should be included in your header file called main.h
-- Don’t forget to push your header file
----
-# More Info
-* You do not have to learn about calloc and realloc.
+
+# 0x0B. C - malloc, free
+
+This directory contains solutions to tasks related to dynamic memory allocation and deallocation in C programming using `malloc` and `free`.
+
+## Tasks:
+
+1. [**0-create_array.c**](https://github.com/Drihmia/alx-low_level_programming/blob/main/0x0B-malloc_free/0-create_array.c): A function that creates an array of characters, initializes it with a specific character.
+
+2. [**1-strdup.c**](https://github.com/Drihmia/alx-low_level_programming/blob/main/0x0B-malloc_free/1-strdup.c): A function that returns a pointer to a newly allocated space in memory, which contains a copy of the string given as a parameter.
+
+3. [**2-str_concat.c**](https://github.com/Drihmia/alx-low_level_programming/blob/main/0x0B-malloc_free/2-str_concat.c): A function that concatenates two strings.
+
+4. [**3-alloc_grid.c**](https://github.com/Drihmia/alx-low_level_programming/blob/main/0x0B-malloc_free/3-alloc_grid.c): A function that returns a pointer to a 2 dimensional array of integers.
+
+5. [**3-main.c**](https://github.com/Drihmia/alx-low_level_programming/blob/main/0x0B-malloc_free/3-main.c): A main function for testing `3-alloc_grid.c`.
+
+6. [**4-free_grid.c**](https://github.com/Drihmia/alx-low_level_programming/blob/main/0x0B-malloc_free/4-free_grid.c): A function that frees a 2 dimensional grid previously created by your `3-alloc_grid.c` function.
+
+7. [**100-argstostr.c**](https://github.com/Drihmia/alx-low_level_programming/blob/main/0x0B-malloc_free/100-argstostr.c): A function that concatenates all the arguments of your program.
+
+8. [**101-strtow.c**](https://github.com/Drihmia/alx-low_level_programming/blob/main/0x0B-malloc_free/101-strtow.c): A function that splits a string into words.
+
+Feel free to check out each task for a detailed description and the corresponding solution file!
+
+# [HOME](https://github.com/Drihmia/alx-low_level_programming/blob/main/README.md)
+# [Previous Project](https://github.com/Drihmia/alx-low_level_programming/tree/main/0x0A-argc_argv/README.md)
+# [Next Project](https://github.com/Drihmia/alx-low_level_programming/tree/main/0x0C-more_malloc_free/README.md)
